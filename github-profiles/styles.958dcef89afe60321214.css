@@ -15,6 +15,10 @@ body {
   font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f6f6f7;
 }
+#root {
+  height: 100%;
+}
+
 .result-count {
   position: relative;
   font-weight: 500;
@@ -33,6 +37,12 @@ body {
   padding-left: 0;
   width: 46%;
   margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
 }
 
 #user-grid li {
@@ -57,6 +67,8 @@ body {
 
 .user-grid-wrapper {
   display: flex;
+  position: relative;
+  height: calc(100% - 85px);
 }.search-wrapper {
   display: flex;
   flex-direction: column;
@@ -83,9 +95,14 @@ body {
   list-style: none;
   padding-left: 0;
   width: 46%;
-  max-height: 600px;
+  /* max-height: 600px; */
   overflow-y: auto;
   margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 #repo-grid li {
@@ -117,6 +134,8 @@ body {
 
 .repo-grid-wrapper {
   display: flex;
+  position: relative;
+  height: calc(100% - 85px);
 }
 
 #stats {
