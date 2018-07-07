@@ -15,7 +15,38 @@ body {
   font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f6f6f7;
 }
-#root {
+
+.fadeOut {
+  opacity: .1;
+  animation-name: fadeOut;
+  animation-duration: .3s;
+}
+
+.fadeIn {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-duration: .3s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: .1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: .1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}#root {
   height: 100%;
 }
 
@@ -77,12 +108,26 @@ body {
   border-radius: 3px;
   padding: 5px;
   margin: auto;
-  width: 27%;
+  width: 30%;
   position: absolute;
   left: 0;
   right: 0;
   top: 27%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  animation-duration: .5s;
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+
+  to {
+    top: 27%;
+    opacity: 1;
+  }
 }
 
 #user-details img {
