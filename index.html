@@ -6,50 +6,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <style>
-      body {
-        font-family: "Segoe UI", sans-serif;
-        color: #24292e;
+      html, body {
+        height: 100vh;
       }
 
-      body > div {
+      body {
+        font-family: "Segoe UI", sans-serif;
+        color: #b0bec5;
+        margin: 0 .5rem;
+        background-color: #424242;
+      }
+
+      .title {
         font-size: 3rem;
         text-align: center;
+      }
+
+      .main-content {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .intro {
+        flex: 1;
+        text-align: center;
+      }
+
+      .pic {
+        border-radius: 2rem;
+        box-shadow: 0 0.125rem 0.25rem 0.0625rem #242424;
+      }
+
+      .name {
+        font-size: 1.5rem;
+      }
+
+      .name + a {
+        color: #b0bec5;
+      }
+
+      .email-icon {
+        margin-right: 0.5rem;
+      }
+
+      .align-middle {
+        vertical-align: middle;
+      }
+
+      details {
+        flex: 3;
+        border: 1px solid;
+        border-radius: 0.5rem;
+      }
+
+      details > summary {
+        cursor: pointer;
+        padding: .5rem;
+      }
+
+      details > section {
+        padding: 0 1rem;
+      }
+
+      details > section:not(:last-child) {
+        border-bottom: 1px solid;
       }
     </style>
   </head>
   <body>
-    <div>Hello from Jasmine</div>
-    <section>
-      <h2>Year 2008 - 2017</h3>
-      <p>My next set of assignments were at Tekno Point Multimedia, Mumbai.
-        Here I learned to build rich internet UI applications using the then popular Adobe Flex framework which was based on Adobe Flash platform and Actionscript language.
-        I worked as an Adobe Flex consultant with many clients
-
-        <ul>
-          <li>
-            ServiceMax, Bangalore Nov 2009 - May 2016
-          </li>
-          <li>
-            HCL Axon, Noida Jan 2011 - Jun 2011
-          </li>
-          <li>
-            Vertex Software (acquired by NTT Data), Pune May 2009 - Oct 2009
-          </li>
-        </ul>
-
-        The main technology stack that i worked on was mainly
-      </p>
-    </section>
-    <section>
-      <h2>Year 2006 - 2007</h3>
-      <p>I landed my first job as a member of technical staff at Websym Technologies, Pune.
-        Here I learned to build a recruitment portal using Java Struts framework, JSP and MSSQL.
-        During this year, i also learned Html, CSS and Javascript. After working as a full stack developer, i felt i was more inclined towards UI.
-        So I did a 6 months multimedia course from CDAC institute, Mumbai</p>
-    </section>
-    <section>
-      <h2>Year 2005</h3>
-      <p>This is the year i graduated from Sinhgad College of Engineering, Pune, Maharashtra, India with a Bachelor's degree in Electronics & Telecommunications.</p>
-    </section>
+    <header class="title">👋 Hi There</header>
+    <div class="main-content">
+      <div class="intro">
+        <img class="pic" alt="" width="260" height="260" src="https://avatars.githubusercontent.com/u/1888304?v=4">
+        <div class="name">Jasmine Hirpara</div>
+        <a href="mailto:jasmine758@rediffmail.com">
+          <img class="email-icon align-middle" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/24/000000/external-email-interface-kiranshastry-lineal-color-kiranshastry.png"/>jasmine758@rediffmail.com
+        </a>
+        <div>
+          <img class="align-middle" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/24/000000/external-location-hotel-kiranshastry-lineal-color-kiranshastry.png"/>
+          Bangalore
+        </div>
+      </div>
+      <details>
+        <summary>Professional Timeline</summary>
+        <section>
+          <h4>Year 2008 - 2017</h4>
+          <p>My next set of assignments were at Tekno Point Multimedia, Mumbai.
+            Here I learned to build rich internet UI applications using the then popular Adobe Flex framework which was based on Adobe Flash platform and Actionscript language.
+            I worked as an Adobe Flex consultant with many clients
+    
+            <ul>
+              <li>
+                ServiceMax, Bangalore Nov 2009 - May 2016
+              </li>
+              <li>
+                HCL Axon, Noida Jan 2011 - Jun 2011
+              </li>
+              <li>
+                Vertex Software (acquired by NTT Data), Pune May 2009 - Oct 2009
+              </li>
+            </ul>
+    
+            The main technology stack that i worked on was mainly Adobe Flex (now Apacha Flex), html & css
+          </p>
+        </section>
+        <section>
+          <h4>Year 2006 - 2007</h4>
+            <ul>
+              <li>Landed first job as a member of technical staff at Websym Technologies, Pune.</li>
+              <li>Worked on a recruitment portal using Java Struts framework, JSP and MSSQL.</li>
+              <li>Also learned basic Html, CSS and Javascript.</li>
+            </ul>
+        </section>
+        <section>
+          <h4>Year 2005</h4>
+          <p>This is the year i graduated from Sinhgad College of Engineering, Pune, Maharashtra, India with a Bachelor's degree in Electronics & Telecommunications.</p>
+        </section>
+      </details>
+    </div>
   </body>
 </html>
