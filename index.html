@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       html, body {
         height: 100vh;
       }
@@ -15,10 +19,31 @@
         color: #b0bec5;
         margin: 0 .5rem;
         background-color: #424242;
+
+        display: grid;
+        grid:
+          "header header" 5rem
+          "aside details" / 1fr 3fr
+      }
+
+      header {
+        grid-area: header;
+        align-self: center;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      article {
+        grid-area: details;
+        height: calc(100vh - 5rem);
+        overflow: auto;
       }
 
       .title {
-        font-size: 3rem;
+        margin: 0;
+        font-weight: 600;
         text-align: center;
       }
 
@@ -64,7 +89,6 @@
       }
 
       details {
-        flex: 3;
         border: 1px solid;
         border-radius: 0.5rem;
       }
@@ -84,10 +108,14 @@
     </style>
   </head>
   <body>
-    <header class="title">👋 Hi There</header>
-    <div class="main-content">
-      <div class="intro">
-        <img class="pic" alt="" width="260" height="260" src="https://avatars.githubusercontent.com/u/1888304?v=4">
+    <header>
+      <h1 class="title">
+        👋 Hi There
+      </h1>
+    </header>
+
+    <aside class="intro">
+      <img class="pic" alt="" width="260" height="260" src="https://avatars.githubusercontent.com/u/1888304?v=4">
         <div class="intro-details">
           <div class="name">Jasmine Hirpara</div>
           <a href="mailto:jasmine758@rediffmail.com">
@@ -98,7 +126,9 @@
             Bangalore
           </div>
         </div>
-      </div>
+    </aside>
+
+    <article>
       <details>
         <summary>Professional Timeline</summary>
         <section>
@@ -106,7 +136,7 @@
           <p>My next set of assignments were at Tekno Point Multimedia, Mumbai.
             Here I learned to build rich internet UI applications using the then popular Adobe Flex framework which was based on Adobe Flash platform and Actionscript language.
             I worked as an Adobe Flex consultant with many clients
-    
+  
             <ul>
               <li>
                 ServiceMax, Bangalore Nov 2009 - May 2016
@@ -118,7 +148,7 @@
                 Vertex Software (acquired by NTT Data), Pune May 2009 - Oct 2009
               </li>
             </ul>
-    
+  
             The main technology stack that i worked on was mainly Adobe Flex (now Apacha Flex), html & css
           </p>
         </section>
@@ -135,6 +165,6 @@
           <p>This is the year i graduated from Sinhgad College of Engineering, Pune, Maharashtra, India with a Bachelor's degree in Electronics & Telecommunications.</p>
         </section>
       </details>
-    </div>
+    </article>
   </body>
 </html>
