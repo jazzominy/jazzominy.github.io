@@ -41,6 +41,28 @@
         overflow: auto;
       }
 
+      @keyframes wave {
+        from {
+          transform: rotate(0deg);
+        }
+
+        50% {
+          transform: rotate(20deg);
+        }
+
+        to {
+          transform: rotate(0deg);
+        }
+      }
+
+      .hi-emoji {
+        display: inline-block;
+        animation-duration: .5s;
+        animation-name: wave;
+        animation-iteration-count: infinite;
+        animation-delay: .5s;
+      }
+
       .title {
         margin: 0;
         font-weight: 600;
@@ -76,7 +98,7 @@
         align-self: center;
       }
 
-      .name + a {
+      a {
         color: #b0bec5;
       }
 
@@ -91,6 +113,7 @@
       details {
         border: 1px solid;
         border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
       details > summary {
@@ -102,15 +125,15 @@
         padding: 0 1rem;
       }
 
-      details > section:not(:last-child) {
-        border-bottom: 1px solid;
+      details > section:not(:first-child) {
+        border-top: 1px solid;
       }
     </style>
   </head>
   <body>
     <header>
       <h1 class="title">
-        👋 Hi There
+        <span class="hi-emoji">👋</span> Hi There
       </h1>
     </header>
 
@@ -163,6 +186,42 @@
         <section>
           <h4>Year 2005</h4>
           <p>This is the year i graduated from Sinhgad College of Engineering, Pune, Maharashtra, India with a Bachelor's degree in Electronics & Telecommunications.</p>
+        </section>
+      </details>
+      <details>
+        <summary>How I got in to UI development</summary>
+        <section>
+            <p>
+            Back in 2006 i was a full stack web app developer and used Java and its Struts framework.
+            After working for a year or so as a full stack dev, i realized i enjoyed working more on UI.
+            So i left the job in Aug 2007 to persue a 6 months multimedia course - Diploma in Advanced Computer Arts from the government institute C-DAC from Mumbai.
+            There I learned about 2D, 3D animation, image editing, website designing and Flash based animation and website development.
+            Of all the things i learned, the one thing that got me hooked is Adobe Flash (then known as Macromedia).
+            I instantly liked it. Adobe Flash worked on Actionscript language (which is based on ECMAScript standard).
+            That was easy to learn as I was already familiar with Java.
+            I completed the course in Feb 2008 and was immediately recruited by Tekno Point Multimedia Pvt. Ltd, Mumbai.
+            Here I started working on Adobe Flash platform which handled all the aspects of UI development.
+            Then i got introduced to the Adobe Flex (now <a href="https://flex.apache.org" target="_blank">Apache Flex</a>) framework which was used to build rich ui enterprise apps.
+            For long time to come, i worked with this framework till May 2016
+          </p>
+        </section>
+      </details>
+      <details>
+        <summary>New beginnings post May 2016</summary>
+        <section>
+          <p>
+            After Adobe donated the Flex framework to Apache Software Foundation in 2011 (<a href="https://en.wikipedia.org/wiki/Apache_Flex" target="_blank">more info here</a>),
+            its use to develop rich web applications gradually declined.
+            At the time, I was working with a company called ServiceMax, Bangalore which is into field service management.
+            I worked as a consultant there. I worked on 3 apps based on Adobe Flex.
+            One of the apps called Dispatch Console was using Google Maps (Flash version) to display the routes for a field technician.
+            After Google <a href="https://techcrunch.com/2011/09/02/google-abandons-maps-api-for-flash/">announced</a> the deprecation of Flash version for the maps,
+            I had to migrate the Flash version of maps to javascript version.
+            In other words, i had to create a hybrid app which used Flash and Javascript both.
+            And I thought now is the good time to switch to Html, CSS & JS completely.
+            Hence began a new journey to learn Javascript. I started off with The Definitive Guide 6th Edition by David Flanagan and never looked back 😅.
+            I waved good bye to Flex in May 2016 😢
+          </p>
         </section>
       </details>
     </article>
