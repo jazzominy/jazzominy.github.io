@@ -12,13 +12,15 @@
 
       html, body {
         height: 100vh;
+        font-size: 18px;
+        letter-spacing: 0.0313rem;
       }
 
       body {
         font-family: "Segoe UI", sans-serif;
         color: #b0bec5;
         margin: 0 .5rem;
-        background-color: #424242;
+        background-color: #263238;
 
         display: grid;
         grid:
@@ -133,7 +135,7 @@
   <body>
     <header>
       <h1 class="title">
-        <span class="hi-emoji">👋</span> Hi There
+        <span class="hi-emoji">👋</span> Hi there
       </h1>
     </header>
 
@@ -146,7 +148,7 @@
           </a>
           <div>
             <img class="align-middle" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/24/000000/external-location-hotel-kiranshastry-lineal-color-kiranshastry.png"/>
-            Bangalore
+            Bangalore, India
           </div>
         </div>
     </aside>
@@ -155,8 +157,40 @@
       <details>
         <summary>Professional Timeline</summary>
         <section>
-          <h4>Year 2008 - 2017</h4>
-          <p>My next set of assignments were at Tekno Point Multimedia, Mumbai.
+          <h4>Year 2017 - 2018</h4>
+          <p>
+            In 2017 I got technically sound with Html, CSS and Javascript first and then Angular v2+.
+            This year I started working for Time Inc India (now Meredith Corporation).
+            Here I worked on an internal app which was a revamp of and existing app which was in Silverlight that allowed permissioning for a user different modules.
+            I built the app from scratch using Angular v4.
+            Since there was a requirement to use a grid, Kendo UI for jQuery was used.
+            So i had to use jQuery along with angular (strange right?).
+            Here are key highlights of what I implemented for the app
+            <ul>
+              <li>
+                Implemented a custom state service to manage the state of the app
+              </li>
+              <li>
+                Implemented a custom publish subscribe pattern using <code>EventEmitter</code> class to pass data around different components
+              </li>
+              <li>
+                Created a custom auto-complete search component to search users that used RxJS operators for seamless integration with api to avoid multiple api calls
+              </li>
+              <li>
+                Had to write custom logic to bootstrap the angular app on demand based on whether or not the user was authorized
+              </li>
+              <li>
+                Had to write custom logic to bootstrap the angular app on demand based on whether or not the user was authorized
+              </li>
+              <li>
+                Used <a href="https://github.com/danvk/source-map-explorer">source-map-explorer</a> to analyze the Javascript modules included in final app bundle files 
+              </li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <h4>Year 2008 - 2016</h4>
+          <p>For this period, I worked as a consultant for Tekno Point Multimedia, Mumbai.
             Here I learned to build rich internet UI applications using the then popular Adobe Flex framework which was based on Adobe Flash platform and Actionscript language.
             I worked as an Adobe Flex consultant with many clients
   
@@ -172,7 +206,7 @@
               </li>
             </ul>
   
-            The main technology stack that i worked on was mainly Adobe Flex (now Apacha Flex), html & css
+            The main technology that i worked on was Adobe Flex (now <a href="https://flex.apache.org" target="_blank">Apache Flex</a>), html & css
           </p>
         </section>
         <section>
