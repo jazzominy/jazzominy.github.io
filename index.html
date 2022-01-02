@@ -5,166 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <style>
-      :root {
-        --bg-color: #263238;
-        --text-color: #b0bec5;
-        --header-height: 4rem;
-        --grid-gap: 0.625rem;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html, body {
-        height: 100vh;
-        font-size: 18px;
-        letter-spacing: 0.0313rem;
-      }
-
-      h1, h3 {
-        margin: 0;
-        font-weight: 600;
-      }
-
-      body {
-        font-family: "Segoe UI", sans-serif;
-        color: var(--text-color);
-        margin: 0 .5rem;
-        background-color: var(--bg-color);
-
-        display: grid;
-        gap: var(--grid-gap);
-        grid:
-          "header header" var(--header-height)
-          "aside main" / 1fr 3fr
-      }
-
-      header {
-        grid-area: header;
-        align-self: center;
-      }
-
-      aside {
-        grid-area: aside;
-      }
-
-      main {
-        grid-area: main;
-        height: calc(100vh - var(--header-height) - var(--grid-gap));
-        overflow: auto;
-      }
-
-      @keyframes wave {
-        from {
-          transform: rotate(0deg);
-        }
-
-        50% {
-          transform: rotate(20deg);
-        }
-
-        to {
-          transform: rotate(0deg);
-        }
-      }
-
-      .hi-emoji {
-        display: inline-block;
-        animation-duration: .5s;
-        animation-name: wave;
-        animation-iteration-count: infinite;
-        animation-delay: .5s;
-      }
-
-      .title {
-        text-align: center;
-      }
-
-      .bio {
-        padding-right: 1rem;
-      }
-
-      .intro {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .pic {
-        border-radius: 2rem;
-        box-shadow: 0 0.125rem 0.25rem 0.0625rem #171717;
-      }
-
-      .intro-details {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .name {
-        font-size: 1.5rem;
-        align-self: center;
-      }
-
-      a {
-        color: #f5f5dc;
-      }
-
-      .email-icon {
-        margin-right: 0.5rem;
-      }
-
-      .align-middle {
-        vertical-align: middle;
-      }
-
-      details {
-        border: 1px solid;
-        border-radius: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      details > summary {
-        cursor: pointer;
-        padding: .5rem;
-      }
-
-      details > section {
-        padding: 0 1rem;
-      }
-
-      details > section:not(:first-child) {
-        border-top: 1px solid;
-      }
-     
-      .tech-stack > ul {
-        padding-left: 0;
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.1875rem;
-      }
-
-      .tech-stack > ul > li {
-        border-radius: .5rem;
-        display: inline-flex;
-        min-width: 10rem;
-        min-height: 7rem;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: .5rem;
-        box-shadow: inset 0 0 0.1875rem 0 #b7b7b7;
-      }
-
-      .tech-stack > ul > li > img, svg {
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/styles/styles.css">
   </head>
   <body>
     <header>
@@ -189,7 +30,7 @@
 
     <main>
       <article class="bio">
-        <p>
+        <!-- <p> -->
           I am Jasmine, yet another UI developer. I have been in this field for far too long - since 2008.
           Back in the day, Adobe Flex was really popular. All of it was based on Actionscript language.
           And trust me it was real fun developing rich ui enterprise applications using Adobe Flex (now <a href="https://flex.apache.org" target="_blank">Apache Flex</a>) framework.
@@ -200,7 +41,7 @@
           Anyways, I moved on and embraced Html, CSS & Javascript and the transition was real smooth.
           Once I was proficient enough in these, thanks to this book - The Definitive Guide by David Flanagan,
           i explored Angular and here we are.
-        </p>
+        <!-- </p> -->
       </article>
       <article class="tech-stack">
         <h3>
