@@ -157,3 +157,17 @@
   .tech-stack > ul > li > img, svg {
     display: block;
   }
+
+  @media (orientation: portrait) {
+    body {
+        grid:
+      "header" var(--header-height)
+      "aside"
+      "main"
+    }
+
+    main {
+        height: unset;
+        overflow: unset;
+    }
+  }
