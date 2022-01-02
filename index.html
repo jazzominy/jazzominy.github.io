@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <style>
+      :root {
+        --bg-color: #263238;
+        --text-color: #b0bec5;
+        --header-height: 4rem;
+        --grid-gap: 0.625rem;
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -16,15 +23,21 @@
         letter-spacing: 0.0313rem;
       }
 
+      h1, h3 {
+        margin: 0;
+        font-weight: 600;
+      }
+
       body {
         font-family: "Segoe UI", sans-serif;
-        color: #b0bec5;
+        color: var(--text-color);
         margin: 0 .5rem;
-        background-color: #263238;
+        background-color: var(--bg-color);
 
         display: grid;
+        gap: var(--grid-gap);
         grid:
-          "header header" 5rem
+          "header header" var(--header-height)
           "aside main" / 1fr 3fr
       }
 
@@ -39,7 +52,7 @@
 
       main {
         grid-area: main;
-        height: calc(100vh - 5rem);
+        height: calc(100vh - var(--header-height) - var(--grid-gap));
         overflow: auto;
       }
 
@@ -66,14 +79,11 @@
       }
 
       .title {
-        margin: 0;
-        font-weight: 600;
         text-align: center;
       }
 
-      .main-content {
-        display: flex;
-        align-items: flex-start;
+      .bio {
+        padding-right: 1rem;
       }
 
       .intro {
@@ -86,7 +96,7 @@
 
       .pic {
         border-radius: 2rem;
-        box-shadow: 0 0.125rem 0.25rem 0.0625rem #242424;
+        box-shadow: 0 0.125rem 0.25rem 0.0625rem #171717;
       }
 
       .intro-details {
@@ -130,8 +140,9 @@
       details > section:not(:first-child) {
         border-top: 1px solid;
       }
-
+     
       .tech-stack > ul {
+        padding-left: 0;
         list-style: none;
         display: flex;
         flex-wrap: wrap;
@@ -177,6 +188,20 @@
     </aside>
 
     <main>
+      <article class="bio">
+        <p>
+          I am Jasmine, yet another UI developer. I have been in this field for far too long - since 2008.
+          Back in the day, Adobe Flex was really popular. All of it was based on Actionscript language.
+          And trust me it was real fun developing rich ui enterprise applications using Adobe Flex (now <a href="https://flex.apache.org" target="_blank">Apache Flex</a>) framework.
+          But soon (around 2015-2016) the framework started seeing a decline in its usage as Html & CSS
+          had started to pick up pace in terms of modernization. And i had to say good bye to it 😔. I had spent way
+          too much time with the technology to not be sad.
+          <br><br>
+          Anyways, I moved on and embraced Html, CSS & Javascript and the transition was real smooth.
+          Once I was proficient enough in these, thanks to this book - The Definitive Guide by David Flanagan,
+          i explored Angular and here we are.
+        </p>
+      </article>
       <article class="tech-stack">
         <h3>
           UI technology stack i currently work with
