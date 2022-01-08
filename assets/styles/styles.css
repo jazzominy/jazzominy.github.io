@@ -1,6 +1,9 @@
 :root {
-    --bg-color: #263238;
-    --text-color: #b0bec5;
+    --bg: #263238;
+    --text: #b0bec5;
+    --link: #f5f5dc;
+    --pic-shadow: #171717;
+    --card-shadow: #b7b7b7;
     --header-height: 4rem;
     --grid-gap: 0.625rem;
   }
@@ -22,9 +25,9 @@
 
   body {
     font-family: "Segoe UI", sans-serif;
-    color: var(--text-color);
+    color: var(--text);
     margin: 0 .5rem;
-    background-color: var(--bg-color);
+    background-color: var(--bg);
 
     display: grid;
     gap: var(--grid-gap);
@@ -89,7 +92,7 @@
 
   .pic {
     border-radius: 2rem;
-    box-shadow: 0 0.125rem 0.25rem 0.0625rem #171717;
+    box-shadow: 0 0.125rem 0.25rem 0.0625rem var(--pic-shadow);
   }
 
   .intro-details {
@@ -104,11 +107,20 @@
   }
 
   a {
-    color: #f5f5dc;
+    color: var(--link);
   }
 
   .email-icon {
     margin-right: 0.5rem;
+  }
+
+  .jazzominy {
+    text-align: center;
+  }
+
+  .twitter-icon, .github-icon {
+    height: 1.5rem;
+    fill: var(--link);
   }
 
   .align-middle {
@@ -134,7 +146,8 @@
     border-top: 1px solid;
   }
  
-  .tech-stack > ul {
+  .tech-stack > ul,
+  .books ul {
     padding-left: 0;
     list-style: none;
     display: flex;
@@ -142,7 +155,8 @@
     gap: 0.1875rem;
   }
 
-  .tech-stack > ul > li {
+  .tech-stack > ul > li,
+  .books ul > li {
     border-radius: .5rem;
     display: inline-flex;
     min-width: 10rem;
@@ -151,11 +165,28 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    box-shadow: inset 0 0 0.1875rem 0 #b7b7b7;
+    box-shadow: inset 0 0 0.1875rem 0 var(--card-shadow);
   }
 
-  .tech-stack > ul > li > img, svg {
+  .tech-stack li > img,
+  .books li > img
+  svg {
     display: block;
+  }
+
+  .books ul {
+    gap: 1rem;
+  }
+
+  .books ul > li {
+    box-shadow: unset;
+    align-self: flex-end;
+    gap: 0.25rem;
+  }
+
+  .books li > div {
+    font-size: 12px;
+    text-align: center;
   }
 
   @media (orientation: portrait) {
