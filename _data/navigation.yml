@@ -1,0 +1,14 @@
+# This file contains the navigation links for the site.
+# This data is available at site.data.navigation
+- name: Home
+  url: /
+  icon: fa-home
+- name: Tags
+  url: /tags/
+  icon: fa-tags
+- name: Archive
+  url: /archive/
+  icon: fa-archive
+- name: About
+  url: /about/
+  icon: fa-info-circle
