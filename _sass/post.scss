@@ -4,5 +4,22 @@ article.post {
     padding: 2.5rem;
     border: 0.1rem solid #cccccc5c;
     border-radius: 1rem;
-    background-color: #13232c;
+    background-color: var(--post-bg);
+
+    .post-header {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--post-title);
+        }
+
+        time {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--post-date);
+        }
+    }
 }

@@ -1,0 +1,31 @@
+section.home {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0 0.625rem 0.625rem 0;
+            padding: 2rem;
+            border-radius: 0.625rem;
+            background-color: var(--post-bg);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+            border: 0.0625rem solid #f5f5dc4f;
+
+            &::before {
+                content: attr(data-date);
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 75%;
+                display: block;
+                background-color: var(--link);
+                color: var(--post-bg);
+                padding: 0.3125rem;
+                border-radius: 0 .625rem;
+            }
+        }
+    }
+}

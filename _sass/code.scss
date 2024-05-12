@@ -1,7 +1,8 @@
-pre.highlight, p > code, h3 > code, h4 > code, h5 > code {
-	font-size: .85rem;
+pre.highlight, p > code, h2 > code, h3 > code, h4 > code, h5 > code {
+	font-size: 100%;
 	padding: 0.1875rem 0.3125rem;
 	word-break: break-word;
+	vertical-align: middle;
 	border-radius: 0.25rem;
 	color: var(--code-color);
 	background-color: var(--code-bg);
