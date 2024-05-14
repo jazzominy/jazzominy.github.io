@@ -1,18 +1,22 @@
 section.home {
-    ul {
+    ul.post-list {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
 
-        li {
+        & > li {
             position: relative;
             display: inline-block;
-            margin: 0 0.625rem 0.625rem 0;
             padding: 2rem;
             border-radius: 0.625rem;
             background-color: var(--post-bg);
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
             border: 0.0625rem solid #f5f5dc4f;
+            flex-basis: calc(32% - 1rem);
+            flex-grow: 0;
 
             &::before {
                 content: attr(data-date);
@@ -26,6 +30,22 @@ section.home {
                 padding: 0.3125rem;
                 border-radius: 0 .625rem;
             }
+        }
+    }
+
+    .tag-list > a {
+        font-size: 80%;
+        text-decoration: none;
+        border: 0.0625rem solid #f5f5dc4f;
+        border-radius: 1rem;
+        padding: 0.25rem 0.5rem;
+        display: inline-block;
+        margin-bottom: 0.3125rem;
+        color: var(--text);
+
+        &:hover {
+            background-color: var(--link-hover-bg);
+            color: var(--link-hover-text);
         }
     }
 }
