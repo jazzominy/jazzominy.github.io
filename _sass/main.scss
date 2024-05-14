@@ -54,6 +54,11 @@ body {
 		"aside main" / 16.5rem 1fr;
 }
 
+img {
+	aspect-ratio: 1;
+	max-width: 100%;
+}
+
 #sidebar {
 	grid-area: aside;
 	padding-left: 0;
