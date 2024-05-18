@@ -189,7 +189,7 @@ plugins: [
 ```
 
 Here we have specified `index.html` as our template. So the plugin will take the contents of the template and use them to generate another `index.html` file in output folder.
-Now try running the command `npm run build`. After the command has executed successfully, check the `dist` folder. It will have three files - `bundle.js`, `all.css` and `index.html`. If you open `index.html` file you'll notice that `bundle.js` has been included twice. This is because in template `index.html` we already had a `script` tag for `bundle.js` and one more tag is injected by the `HtmlWebpackPlugin`. Also a `link` tag is added to load the newly created `all.css` file. How :sunglasses: is that. So let us modify the template `index.html` in root folder as
+Now try running the command `npm run build`. After the command has executed successfully, check the `dist` folder. It will have three files - `bundle.js`, `all.css` and `index.html`. If you open `index.html` file you'll notice that `bundle.js` has been included twice. This is because in template `index.html` we already had a `script` tag for `bundle.js` and one more tag is injected by the `HtmlWebpackPlugin`. Also a `link` tag is added to load the newly created `all.css` file. How 😎 is that. So let us modify the template `index.html` in root folder as
 
 ```html
 <!doctype html>
