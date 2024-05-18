@@ -1,4 +1,6 @@
 section.home {
+    padding-bottom: 2rem;
+
     ul.post-list {
         list-style-type: none;
         padding: 0;
@@ -29,16 +31,18 @@ section.home {
                 color: var(--post-bg);
                 padding: 0.3125rem;
                 border-radius: 0 .625rem;
+                font-weight: 500;
             }
         }
     }
 
     .tag-list > a {
         font-size: 80%;
+        font-weight: 600;
         text-decoration: none;
         border: 0.0625rem solid #f5f5dc4f;
         border-radius: 1rem;
-        padding: 0.25rem 0.5rem;
+        padding: 0.1875rem 0.5rem;
         display: inline-block;
         margin-bottom: 0.3125rem;
         color: var(--text);
