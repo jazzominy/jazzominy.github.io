@@ -1,55 +1,56 @@
 ---
 author: Jasmine Hirpara
-tags: [readme]
+title: ReactJS Form Component
+excerpt: A reusable reactjs From component which renders the fields described in the configuration object in a form tag
+tags: [reactjs component]
 ---
-
 
 ## Form component built using ReactJS
 
-This is a reusable From component which renders the fields described in the `config` object in a form tag. Here is a sample `config` object
+This is not a blog post but a copy of readme file from my <a href="https://github.com/jazzominy/react-form" target="_blank">repository</a>. This is a reusable From component which renders the fields described in the `config` object in a form tag. Here is a sample `config` object
 
 ```javascript
-    config = {
-        id: "info",
-        name: "info",
-        label: "Form header",
-        fields: [{
-            label: "Greeting",
-            value: "Hello",
-            type: "text"
-        },
-        {
-            label: "Password",
-            value: "Hello",
-            type: "password"
-        },
-        {
-            label: "Fruits",
-            options: options,
-            type: "select",
-            selected: "c"
-        },
-        {
-            label: "Fruits",
-            values: radios,
-            type: "radio",
-            selectedValue: "c"
-        },
-        {
-            label: "Fruits",
-            values: checkboxes,
-            type: "checkbox",
-            selectedValue: ["a","c"]
-        },
-        {
-            value: "Submit",
-            type: "submit"
-        }],
-        onSubmit: function (fieldMap) {
-            console.log("Form submitted");
-        },
-        action: "/abc"
-    }
+config = {
+    id: "info",
+    name: "info",
+    label: "Form header",
+    fields: [{
+        label: "Greeting",
+        value: "Hello",
+        type: "text"
+    },
+    {
+        label: "Password",
+        value: "Hello",
+        type: "password"
+    },
+    {
+        label: "Fruits",
+        options: options,
+        type: "select",
+        selected: "c"
+    },
+    {
+        label: "Fruits",
+        values: radios,
+        type: "radio",
+        selectedValue: "c"
+    },
+    {
+        label: "Fruits",
+        values: checkboxes,
+        type: "checkbox",
+        selectedValue: ["a","c"]
+    },
+    {
+        value: "Submit",
+        type: "submit"
+    }],
+    onSubmit: function (fieldMap) {
+        console.log("Form submitted");
+    },
+    action: "/abc"
+}
 ```
 
 Bootstrap is used to style and layout the form.
