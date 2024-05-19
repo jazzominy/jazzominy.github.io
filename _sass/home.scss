@@ -52,4 +52,8 @@ section.home {
             color: var(--link-hover-text);
         }
     }
+
+    .tag-list > i {
+        vertical-align: sub;
+    }
 }
