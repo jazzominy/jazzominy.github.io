@@ -22,20 +22,22 @@ In order to setup this project, we would require [NodeJS](https://nodejs.org/en/
 
 To install webpack run `npm i webpack --save-dev`. This will install the latest version of `webpack` as a dev dependency and save an entry to the `package.json` file. If you check `package.json`, there will be an an entry made for `webpack` with its installed version. It would look something like
 
-    {
-      "name": "js-boilerplate",
-      "version": "1.0.0",
-      "description": "",
-      "main": "index.js",
-      "scripts": {
+```json
+{
+    "name": "js-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "author": "Jasmine Hirpara",
-      "license": "ISC",
-      "devDependencies": {
+    },
+    "author": "Jasmine Hirpara",
+    "license": "ISC",
+    "devDependencies": {
         "webpack": "^3.5.6"
-      }
     }
+}
+```
 
 ### Creating project files
 
@@ -47,13 +49,15 @@ Lets add a function in `index.js` that renders a `div` to the html body.
 
 `src/index.js`
 
-    function output() {
-        var el = document.createElement("div");
-        el.innerHTML = "Hello boilerplate";
-        return el;
-    }
+```javascript
+function output() {
+    var el = document.createElement("div");
+    el.innerHTML = "Hello boilerplate";
+    return el;
+}
 
-    document.body.appendChild(output());
+document.body.appendChild(output());
+```
 
 ### Webpack configuration file
 
@@ -61,18 +65,20 @@ Webpack requires a config file, in root directory, that specifies the build conf
 
 `webpack.config.js`
 
-    const path = require("path");
+```javascript
+const path = require("path");
 
-    module.exports = {
-        entry: [
-            path.resolve(__dirname, "src/index.js")
-        ],
-        output: {
-            path: path.resolve(__dirname, "dist"),
-            filename: "bundle.js"
-        }
+module.exports = {
+    entry: [
+        path.resolve(__dirname, "src/index.js")
+    ],
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js"
     }
-    
+}
+```
+
 The config file exports a config object with the following configuration
 
 `entry` - it specifies the input file that needs to be bundled. In our case it is `index.js`
@@ -93,28 +99,32 @@ from root directory and observe the output. The console should show some logs li
 
 When the `webpack` commands runs successfully, the `dist` folder will be created in root directory with `bundle.js` file. Include this file in `index.html` as 
 
-    <!doctype html>
-    <html>
-        <head>
-            <title>JS Boilerplate</title>
-        </head>
-        <body>
-            <script src="dist/bundle.js"></script>
-        </body>
-    </html>
-    
+```html
+<!doctype html>
+<html>
+    <head>
+        <title>JS Boilerplate</title>
+    </head>
+    <body>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
+```
+
 Now open the `index.html` in a browser and it should display Hello boilerplate. Hooray! we just setup `webpack` to bundle our code in `index.js`
 
 We can use npm scripts to run the `webpack` command. So lets modify the `package.json` to add a `build` script as
 
-    {
-      ....
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --config webpack.config.js"
-      },
-      ....
-    }
+```json
+{
+    ....
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+    },
+    ....
+}
+```
 
 Try running `npm run build` command. It should give the same result as `webpack` command run earlier
 
@@ -126,45 +136,51 @@ It is not a good practice to serve html files directly through file system. To a
 
 Once the install is successful, modify the `webpack.config.js` by adding `devServer` property as 
 
-    const path = require("path");
+```javascript
+const path = require("path");
 
-    module.exports = {
-        entry: [
-            path.resolve(__dirname, "src/index.js")
-        ],
-        output: {
-            path: path.resolve(__dirname, "dist"),
-            publicPath: "/",
-            filename: "bundle.js"
-        },
-        devServer: {
-            contentBase: '.'
-        }
+module.exports = {
+    entry: [
+        path.resolve(__dirname, "src/index.js")
+    ],
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
+        filename: "bundle.js"
+    },
+    devServer: {
+        contentBase: '.'
     }
+}
+```
     
 `devServer.contentBase` - the path from where the content will be served. In our case, it (index.html) will be served from current directory. So the value is '.'. One thing to note here is that when using `webpack-dev-server`, the `bundle.js` will be served from memory. So the file wont be created physically. The path that you specify in `output.publicPath` should match the path specified in `index.html` to load `bundle.js`. So we need to modify `index.html` as 
 
-    <!doctype html>
-    <html>
-        <head>
-            <title>JS Boilerplate</title>
-        </head>
-        <body>
-            <script src="bundle.js"></script>
-        </body>
-    </html>
-    
+```html
+<!doctype html>
+<html>
+    <head>
+        <title>JS Boilerplate</title>
+    </head>
+    <body>
+        <script src="bundle.js"></script>
+    </body>
+</html>
+```
+
 Now add a `start` script to `package.json` as 
 
-    {
-      ....
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack-dev-server --open"
-      },
-      ....
-    }
+```json
+{
+    ....
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open"
+    },
+    ....
+}
+```
     
 The `--open` option opens the browser with `index.html` when the `start` script runs successfully. Now running
 
@@ -184,16 +200,18 @@ Once the package is installed, we need to create a config file for it which spec
 
 Once the config is setup, `.eslintrc.json` file is created with your answers as configuration. Now let us create an npm script to enable linting for our source files by modifying `package.json` as
 
-    {
-      ....
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint src",
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack-dev-server --open"
-      },
-      ....
-    }
+```json
+{
+    ....
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open"
+    },
+    ....
+}
+```
 
 Now that `eslint` is configured, go ahead and try it out by executing `npm run lint`. If there are any errors or warnings, they will be displayed on console. If not, then command will be executed successfully with no messages on console. Now we would want to run this command every time when the source file changes and this can be tedious. To avoid this we will install [eslint-watch](https://www.npmjs.com/package/eslint-watch) package which does it for us. Execute the following command
 
@@ -201,16 +219,18 @@ Now that `eslint` is configured, go ahead and try it out by executing `npm run l
     
 and modify `package.json` as
 
-    {
-      ....
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint:watch": "esw src --watch",
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack-dev-server --open"
-      },
-      ....
-    }
+```json
+{
+    ....
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:watch": "esw src --watch",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open"
+    },
+    ....
+}
+```
     
 Try running `npm run lint:watch` and make some changes to `index.js`. The file is linted as soon as it is saved. So no need to run the command each time the source files change.
 
@@ -220,17 +240,19 @@ On final step is remaining though. What we want is to run `start` and `lint:watc
     
 Now modify the `package.json` as 
 
-    {
-      ....
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint:watch": "esw src --watch",
-        "build": "webpack --config webpack.config.js",
-        "serve": "webpack-dev-server --open",
-        "start": "run-p lint:watch serve"
-      },
-      ....
-    }
+```json
+{
+    ....
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:watch": "esw src --watch",
+    "build": "webpack --config webpack.config.js",
+    "serve": "webpack-dev-server --open",
+    "start": "run-p lint:watch serve"
+    },
+    ....
+}
+```
     
 I renamed the earlier written `start` script to `serve` and created a new `start` script with `run-p lint:watch serve`. The `run-p` command runs the scripts `lint:watch` and `serve` in parallel.
 
