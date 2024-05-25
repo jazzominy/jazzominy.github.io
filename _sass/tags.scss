@@ -1,0 +1,21 @@
+article.tags {
+    padding: 0 2.5rem 2.5rem 2.5rem;
+
+    .tag {
+        @include tag;
+        font-size: 90%;
+    }
+
+    ul {
+        margin-top: .5rem;
+        margin-bottom: 2rem;
+
+        li {
+            font-size: 90%;
+        }
+    }
+}
+
+.tag-title {
+    margin-left: 1rem;
+}

@@ -6,7 +6,7 @@
 - name: Tags
   url: /tags/
   icon: fa-tags
-- name: Archive
+- name: Posts
   url: /archive/
   icon: fa-archive
 - name: About
