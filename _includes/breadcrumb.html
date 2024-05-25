@@ -1,0 +1,6 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+	<span><a href="/">Home</a></span>
+	{% if page.title != "Home" %}
+		<span class="page-title">{{page.title}}</span>
+	{% endif %}
+</nav>

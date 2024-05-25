@@ -1,0 +1,11 @@
+@mixin tag {
+    font-size: 80%;
+    font-weight: 600;
+    text-decoration: none;
+    border: 0.0625rem solid #f5f5dc4f;
+    border-radius: 1rem;
+    padding: 0.1875rem 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.3125rem;
+    color: var(--text);
+}

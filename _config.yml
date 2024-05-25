@@ -1,11 +1,13 @@
+permalink: /:year/:month/:day/:title/
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      permalink: "/:title/"
   - scope:
       path: ""
     values:
       layout: default
+include:
+  - tags

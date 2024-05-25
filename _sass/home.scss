@@ -1,0 +1,50 @@
+section.home {
+    padding: 1rem 2rem 2rem 1rem;
+
+    ul.post-list {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        & > li {
+            position: relative;
+            display: inline-block;
+            padding: 2rem;
+            border-radius: 0.625rem;
+            background-color: var(--post-bg);
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+            border: 0.0625rem solid #f5f5dc4f;
+            flex-basis: max(18.75rem, 31%);
+            flex-shrink: 0;
+
+            &::before {
+                content: attr(data-date);
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 75%;
+                display: block;
+                background-color: var(--link);
+                color: var(--post-bg);
+                padding: 0.3125rem;
+                border-radius: 0 .625rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .tag-list > a {
+        @include tag;
+
+        &:hover {
+            background-color: var(--link-hover-bg);
+            color: var(--link-hover-text);
+        }
+    }
+
+    .tag-list > i {
+        vertical-align: sub;
+    }
+}
