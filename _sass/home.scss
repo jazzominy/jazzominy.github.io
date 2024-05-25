@@ -1,8 +1,7 @@
 section.home {
-    padding-bottom: 2rem;
+    padding: 1rem 2rem 2rem 1rem;
 
     ul.post-list {
-        list-style-type: none;
         padding: 0;
         margin: 0;
         display: flex;
@@ -17,8 +16,8 @@ section.home {
             background-color: var(--post-bg);
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
             border: 0.0625rem solid #f5f5dc4f;
-            flex-basis: calc(32% - 1rem);
-            flex-grow: 0;
+            flex-basis: max(18.75rem, 31%);
+            flex-shrink: 0;
 
             &::before {
                 content: attr(data-date);
@@ -37,15 +36,7 @@ section.home {
     }
 
     .tag-list > a {
-        font-size: 80%;
-        font-weight: 600;
-        text-decoration: none;
-        border: 0.0625rem solid #f5f5dc4f;
-        border-radius: 1rem;
-        padding: 0.1875rem 0.5rem;
-        display: inline-block;
-        margin-bottom: 0.3125rem;
-        color: var(--text);
+        @include tag;
 
         &:hover {
             background-color: var(--link-hover-bg);

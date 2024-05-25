@@ -1,8 +1,8 @@
 :root {
 	--font-family: 'Montserrat', sans-serif;
 	--bg: #263238;
-	--text: #b0bec5;
-	--link: #f5f5dc;
+	--text: #b0bec5bd;
+	--link: #f5f5dca8;
 	--link-hover-bg: #f5f5dc4d;
 	--link-hover-text: #f0ffff;
 	--link-active-bg: #f5f5dcd6;
@@ -12,9 +12,9 @@
 	--header-height: 3rem;
 	--grid-gap: 0.625rem;
 	--code-bg: #13130e;
-	--code-color: #ffffff;
+	--code-color: #ffffffb8;
 	--post-bg: #13232c;
-	--post-title: #f3f3f3;
+	--post-title: #f3f3f3ad;
 }
 
 * {
@@ -58,6 +58,10 @@ img {
 	max-width: 100%;
 }
 
+ul {
+	list-style-type: none;
+}
+
 #sidebar {
 	grid-area: aside;
 	padding: var(--header-height) 0 0 0;
@@ -83,7 +87,6 @@ img {
 	}
 
 	ul {
-		list-style-type: none;
 		padding: 0;
 		margin: 0;
 		display: flex;
@@ -129,13 +132,14 @@ img {
 	.social {
 		display: flex;
 		gap: 0.5rem;
+		margin-top: auto;
+		padding-bottom: 1rem;
 	}
 
 	.social-link {
 		color: var(--text);
-		width: 1.75rem;
-		height: 1.75rem;
-		font-size: 1.375rem;
+		line-height: 1rem;
+		font-size: 130%;
 	}
 }
 
