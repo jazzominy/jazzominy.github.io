@@ -3,10 +3,20 @@ title: Posts
 permalink: /archive/
 ---
 
-<h1>Posts</h1>
-
-<ul>
-    {% for post in site.posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<section class="posts">
+    <h1>Posts</h1>
+    
+    <ul>
+        {% for post in site.posts %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <div class="post-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <time datetime="{{ post.date | date_to_string }}">
+                        {{ post.date | date_to_string }}
+                    </time>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

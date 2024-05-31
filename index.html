@@ -9,7 +9,7 @@ title: "Home"
 	<h2>Recent posts</h2>
 
 	<ul class="post-list">
-		{% for post in site.posts %}
+		{% for post in site.posts limit: 3 %}
 		<li data-date="{{ post.date | date_to_string }}">
 			<h3>{{ post.title }}</h3>
 			<p>{{ post.excerpt }}</p>

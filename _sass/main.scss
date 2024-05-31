@@ -1,8 +1,8 @@
 :root {
 	--font-family: 'Montserrat', sans-serif;
 	--bg: #263238;
-	--text: #b0bec5bd;
-	--link: #f5f5dca8;
+	--text: #b0bec5;
+	--link: #f5f5dc;
 	--link-hover-bg: #f5f5dc4d;
 	--link-hover-text: #f0ffff;
 	--link-active-bg: #f5f5dcd6;
@@ -14,7 +14,7 @@
 	--code-bg: #13130e;
 	--code-color: #ffffffb8;
 	--post-bg: #13232c;
-	--post-title: #f3f3f3ad;
+	--post-title: #f3f3f3d9;
 }
 
 * {
@@ -28,8 +28,7 @@ body {
 	letter-spacing: 0.0313rem;
 }
 
-h1,
-h3 {
+h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 }
 
@@ -51,7 +50,7 @@ body {
 	gap: var(--grid-gap);
 	grid:
 		"aside header" var(--header-height)
-		"aside main" / 16.5rem 1fr;
+		"aside main"  / 16.5rem 1fr;
 }
 
 img {
@@ -161,6 +160,20 @@ main {
 	grid-area: main;
 	height: calc(100vh - var(--header-height) - var(--grid-gap));
 	overflow: auto;
+	display: flex;
+	flex-direction: column;
+
+	& > :first-child {
+		padding: 0 2rem;
+		flex: 1;
+	}
+}
+
+#footer {
+	padding: 0 1rem;
+	font-size: 80%;
+	font-weight: 500;
+  	font-style: italic;
 }
 
 @keyframes wave {
