@@ -14,7 +14,7 @@
 	--code-bg: #13130e;
 	--code-color: #ffffffb8;
 	--post-bg: #13232c;
-	--post-title: #f3f3f3ad;
+	--post-title: #f3f3f3d9;
 }
 
 * {
@@ -160,10 +160,20 @@ main {
 	grid-area: main;
 	height: calc(100vh - var(--header-height) - var(--grid-gap));
 	overflow: auto;
+	display: flex;
+	flex-direction: column;
+
+	& > :first-child {
+		padding: 0 2rem;
+		flex: 1;
+	}
 }
 
 #footer {
 	padding: 0 1rem;
+	font-size: 80%;
+	font-weight: 500;
+  	font-style: italic;
 }
 
 @keyframes wave {
