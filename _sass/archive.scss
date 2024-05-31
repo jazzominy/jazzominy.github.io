@@ -1,0 +1,19 @@
+section.posts {
+	padding: 0 2.5rem;
+
+	ul {
+		padding-left: 0;
+
+		li {
+			margin-bottom: 1rem;
+			display: flex;
+			gap: 2rem;
+			align-items: center;
+
+			.post-date {
+				font-size: 90%;
+				color: var(--text-light);
+			}
+		}
+	}
+}
