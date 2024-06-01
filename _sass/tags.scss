@@ -16,6 +16,14 @@ article.tags {
     }
 }
 
-.tag-title {
-    margin-left: 1rem;
+section.tag {
+    ul {
+        padding-left: 0;
+    }
+
+    i {
+        @include tag;
+        font-size: 70%;
+        vertical-align: middle;
+    }
 }
