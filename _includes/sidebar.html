@@ -1,6 +1,30 @@
 <aside id="sidebar" aria-label="sidebar">
     <img class="pic" alt="Jasmine Hirpara" width="230" height="230" src="/assets/img/jh.jpg">
-    <div class="name">Jasmine Hirpara</div>
+	<svg width="230" height="38" viewBox="0 0 230 38" xmlns="http://www.w3.org/2000/svg"  aria-labelledby="svgTitle svgDesc">
+		<title id="svgTitle">Jasmine Hirpara</title>
+		<desc id="svgDesc">An animated gradient text mask displaying the author's name Jasmine Hirpara</desc>
+		<defs>
+			<mask id="text-mask" x="0" y="0" width="100" height="100">
+				<text x="2" y="26" 
+					font-family="Montserrat"
+					font-weight="bold"
+					font-style="italic"
+					font-size="1.5rem"
+					fill="#fff">Jasmine Hirpara
+				</text>
+			</mask>
+		  	<linearGradient id="gradient" x1="0" x2=".5" y1=".01" y2="0" spreadMethod="pad">
+				<stop offset="0" stop-color="#FFAF7B"></stop>
+				<stop offset="0" stop-color="#f3f98a" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#f3f98a" stop-opacity="1"></stop>
+				<animate attributeName="x1"
+					from="0" to="1" additive="sum" repeatCount="indefinite"
+					dur="5s" fill="freeze" />
+			</linearGradient>
+		</defs>
+		<rect x="0" y="0" width="100%" height="100%" transform="scale(1)" fill="url(#gradient)" mask="url(#text-mask)">
+		</rect>
+	</svg>
 	<nav>
 		<ul>
 			{% for item in site.data.navigation %}
