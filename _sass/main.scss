@@ -81,6 +81,10 @@ ul {
 		font-style: italic;
 	}
 
+	svg {
+		flex-shrink: 0;
+	}
+
 	nav {
 		width: 100%;
 	}
