@@ -69,6 +69,7 @@ ul {
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
+	max-width: 20rem;
 
 	.pic {
 		border-radius: 2rem;
@@ -163,6 +164,7 @@ nav.breadcrumb {
 main {
 	grid-area: main;
 	height: calc(100vh - var(--header-height) - var(--grid-gap));
+	min-width: 23rem;
 	overflow: auto;
 	display: flex;
 	flex-direction: column;
@@ -318,4 +320,18 @@ details > section:not(:first-child) {
 .books li > div {
 	font-size: 12px;
 	text-align: center;
+}
+
+@media (orientation: portrait) {
+	body {
+		grid:
+			'header' var(--header-height)
+			'aside' min-content
+			'main';
+	}
+
+	main {
+		height: unset;
+		overflow: unset;
+	}
 }
