@@ -2,7 +2,7 @@ module Jekyll
     class TagGenerator < Generator
         def generate(site)
             # Exit if not in production mode
-            # return unless ENV['JEKYLL_ENV'] == 'production'
+            return unless ENV['JEKYLL_ENV'] == 'production'
 
             tags = {}
 
