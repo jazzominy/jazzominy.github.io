@@ -44,3 +44,19 @@ article.post {
         cursor: pointer;
     }
 }
+
+.show-progress-bar::before {
+    // unless there is some content, the pseudo-element will not be rendered
+    content: "%";
+    // dont show the content but just the background
+    color: transparent;
+    display: block;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    // deduct the article right margin from the width
+    width: calc(100% - 0.625rem);
+    height: 0.25rem;
+    background: linear-gradient(90deg, var(--progress-bar) var(--progress), transparent var(--progress));
+}
