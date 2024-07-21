@@ -15,6 +15,7 @@
 	--code-color: #ffffffb8;
 	--post-bg: #13232c;
 	--post-title: #f3f3f3d9;
+	--progress-bar: #89bad2;
 }
 
 * {
@@ -162,6 +163,7 @@ nav.breadcrumb {
 }
 
 main {
+	position: relative;
 	grid-area: main;
 	height: calc(100vh - var(--header-height) - var(--grid-gap));
 	min-width: 23rem;
