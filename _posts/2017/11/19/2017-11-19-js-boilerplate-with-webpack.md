@@ -38,6 +38,7 @@ To install webpack run `npm i webpack --save-dev`. This will install the latest 
     }
 }
 ```
+{: .snippet}
 
 ### Creating project files
 
@@ -58,6 +59,7 @@ function output() {
 
 document.body.appendChild(output());
 ```
+{: .snippet}
 
 ### Webpack configuration file
 
@@ -78,6 +80,7 @@ module.exports = {
     }
 }
 ```
+{: .snippet}
 
 The config file exports a config object with the following configuration
 
@@ -110,6 +113,7 @@ When the `webpack` commands runs successfully, the `dist` folder will be created
     </body>
 </html>
 ```
+{: .snippet}
 
 Now open the `index.html` in a browser and it should display Hello boilerplate. Hooray! we just setup `webpack` to bundle our code in `index.js`
 
@@ -125,6 +129,7 @@ We can use npm scripts to run the `webpack` command. So lets modify the `package
     ....
 }
 ```
+{: .snippet}
 
 Try running `npm run build` command. It should give the same result as `webpack` command run earlier
 
@@ -153,7 +158,8 @@ module.exports = {
     }
 }
 ```
-    
+{: .snippet}
+
 `devServer.contentBase` - the path from where the content will be served. In our case, it (index.html) will be served from current directory. So the value is '.'. One thing to note here is that when using `webpack-dev-server`, the `bundle.js` will be served from memory. So the file wont be created physically. The path that you specify in `output.publicPath` should match the path specified in `index.html` to load `bundle.js`. So we need to modify `index.html` as 
 
 ```html
@@ -167,6 +173,7 @@ module.exports = {
     </body>
 </html>
 ```
+{: .snippet}
 
 Now add a `start` script to `package.json` as 
 
@@ -181,7 +188,8 @@ Now add a `start` script to `package.json` as
     ....
 }
 ```
-    
+{: .snippet}
+ 
 The `--open` option opens the browser with `index.html` when the `start` script runs successfully. Now running
 
     npm start
@@ -212,6 +220,7 @@ Once the config is setup, `.eslintrc.json` file is created with your answers as 
     ....
 }
 ```
+{: .snippet}
 
 Now that `eslint` is configured, go ahead and try it out by executing `npm run lint`. If there are any errors or warnings, they will be displayed on console. If not, then command will be executed successfully with no messages on console. Now we would want to run this command every time when the source file changes and this can be tedious. To avoid this we will install [eslint-watch](https://www.npmjs.com/package/eslint-watch) package which does it for us. Execute the following command
 
@@ -231,7 +240,8 @@ and modify `package.json` as
     ....
 }
 ```
-    
+{: .snippet}
+
 Try running `npm run lint:watch` and make some changes to `index.js`. The file is linted as soon as it is saved. So no need to run the command each time the source files change.
 
 On final step is remaining though. What we want is to run `start` and `lint:watch` in parallel so that as soon as the source files change, we lint them and reload the `index.html` in browser. For this, there are a lot of packages available that run npm scripts in paralles. What I will use is [npm-run-all](https://www.npmjs.com/package/npm-run-all). So install it by using the command
@@ -253,7 +263,8 @@ Now modify the `package.json` as
     ....
 }
 ```
-    
+{: .snippet}
+
 I renamed the earlier written `start` script to `serve` and created a new `start` script with `run-p lint:watch serve`. The `run-p` command runs the scripts `lint:watch` and `serve` in parallel.
 
 This sets the basic boilerplate setup for a frontend JS project. So get set and 🚀

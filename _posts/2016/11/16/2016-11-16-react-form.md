@@ -52,6 +52,7 @@ config = {
     action: "/abc"
 }
 ```
+{: .snippet}
 
 Bootstrap is used to style and layout the form.
 
