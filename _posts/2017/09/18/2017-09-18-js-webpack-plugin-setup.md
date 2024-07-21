@@ -24,6 +24,7 @@ function output() {
 
 document.body.appendChild(output());
 ```
+{: .snippet}
 
 Now let us create a new file `output.js` in the same folder as `index.js` and move the `output()` function to new file as
 
@@ -35,6 +36,7 @@ export default function output() {
     return el;
 }
 ```
+{: .snippet}
 
 In `index.js` let us import the `output()` function as 
 
@@ -43,6 +45,7 @@ import output from "./output";
 
 document.body.appendChild(output());
 ```
+{: .snippet}
 	
 Now run the command `npm start` from command line and the `index.html` should load in browser without any error. Now when we run `npm build`, the `bundle.js` that is created will include code from `index.js` and `output.js` files.
 
@@ -57,12 +60,14 @@ These are nothing but the utilities that load a file with specified extension an
     font-weight: bold;
 }
 ```
+{: .snippet}
 
 Now let us import this file in `output.js` as 
 
 ```javascript
 import "./styles/style.css";
 ```
+{: .snippet}
 	
 If you run the command `npm start`, the console should throw an error that looks like
 
@@ -73,6 +78,7 @@ The error indicates that we need a loader to load the particular file type. Lets
 ```bash
 npm i css-loader --save-dev
 ```
+{: .snippet}
 	
 After the installation is complete, we need to modify the `webpack.config.js` as 
 
@@ -89,6 +95,7 @@ module: {
     ]
 }
 ```
+{: .snippet}
 
 The `module` property specifies the `rules` that webpack needs to run when dealing with different file types (in this case css). Now when you rerun the `npm start` command, the error goes away. Lets use the `.bold` class in the `output.js` file as 
 
@@ -102,12 +109,14 @@ export default function render() {
     return el;
 }
 ```
+{: .snippet}
 	
 Note that though that there is no error in command line console, the browser does not reflect the newly added style class. This happens because the `css-loader` that we added recently just loads the imported css file interprets any `@import` and `url()` in it and resolves them. To actually load the style in `index.html` file, we need one more loader called [style-loader](https://webpack.js.org/loaders/style-loader/). Let us install that by running the command
 
 ```bash
 npm i style-loader --save-dev
 ```
+{: .snippet}
 	
 On successful installation, modify the `webpack.config.js` as 
 
@@ -125,6 +134,7 @@ module: {
     ]
 }
 ```
+{: .snippet}
 	
 This configuration now injects the style tag in `index.html` when you run the command `npm start`. You can verify that by viewing the source of `index.html` from browser. So `css-loader` and `style-loader` are used together to load and inject styles in html files respectively. This is great because you do not have to worry about adding styles to `index.html` as loaders take care of it. But as your project grows, you will have more style classes and no one wants their html files bloated with them. Next up we will look at how to extract the style tag in to a separate css file by using a webpack plugin.
 
@@ -135,6 +145,7 @@ Webpack has rich ecosystem of plugins. A plugin is a utility that helps in execu
 ```bash
 npm i extract-text-webpack-plugin --save-dev
 ```
+{: .snippet}
 	
 Once it is installed, modify the `webpack.config.js` as
 
@@ -161,6 +172,7 @@ plugins: [
 ]
 ....
 ```
+{: .snippet}
 	
 Add the `plugins` property to the webpack config object. The `ExtractTextPlugin` takes a config object when creating its new instance. You can specify the file name for the css file that it creates. Also modify `rules` array to use `ExtractTextPlugin` and specify the loader, in config object, to use to load css file. Now when you run the command
 
@@ -171,6 +183,7 @@ the output `dist` folder should have two files - `bundle.js` and `all.css`. Let 
 ```bash
 npm i html-webpack-plugin --save-dev
 ```
+{: .snippet}
 
 Now modify the `webpack.config.js` to use the plugin as
 
@@ -187,6 +200,7 @@ plugins: [
     })
 ]
 ```
+{: .snippet}
 
 Here we have specified `index.html` as our template. So the plugin will take the contents of the template and use them to generate another `index.html` file in output folder.
 Now try running the command `npm run build`. After the command has executed successfully, check the `dist` folder. It will have three files - `bundle.js`, `all.css` and `index.html`. If you open `index.html` file you'll notice that `bundle.js` has been included twice. This is because in template `index.html` we already had a `script` tag for `bundle.js` and one more tag is injected by the `HtmlWebpackPlugin`. Also a `link` tag is added to load the newly created `all.css` file. How 😎 is that. So let us modify the template `index.html` in root folder as
@@ -201,6 +215,7 @@ Now try running the command `npm run build`. After the command has executed succ
     </body>
 </html>
 ```
+{: .snippet}
 
 to avoid loading `bundle.js` twice.
 

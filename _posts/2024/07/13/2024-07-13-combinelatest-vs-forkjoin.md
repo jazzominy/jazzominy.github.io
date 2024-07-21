@@ -17,6 +17,7 @@ forkJoin([subject, httpCall]).subscribe(([subjectValue, httpCallValue]) => {
     console.log('Http call value:', httpCallValue);
 });
 ```
+{: .snippet}
 
 Lets see what happens when we run this code.
 
@@ -35,6 +36,7 @@ combineLatest([subject, httpCall]).subscribe(([subjectValue, httpCallValue]) => 
     console.log('Http call value:', httpCallValue);
 });
 ```
+{: .snippet}
 
 And that just works! The `combineLatest` function emitted the values of both the observables. So what is the difference between `combineLatest` and `forkJoin`?
 
