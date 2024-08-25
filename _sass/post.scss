@@ -5,6 +5,7 @@ article.post {
     border: 0.1rem solid #cccccc5c;
     border-radius: 1rem;
     background-color: var(--post-bg);
+    color: var(--post-text);
 
     .post-header {
         text-align: center;
@@ -47,7 +48,7 @@ article.post {
 
 .show-progress-bar::before {
     // unless there is some content, the pseudo-element will not be rendered
-    content: "%";
+    content: ".";
     // dont show the content but just the background
     color: transparent;
     display: block;
