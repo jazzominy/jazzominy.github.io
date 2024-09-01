@@ -2,6 +2,7 @@
 author: Jasmine Hirpara
 excerpt: This is a very simple boilerplate setup for a frontend javascript project using webpack and eslint
 tags: [javascript, webpack, eslint, bolierplate]
+permalink: /posts/js-boilerplate-with-webpack
 ---
 
 ## Setting up JS Boilerplate with `webpack` and `eslint`
