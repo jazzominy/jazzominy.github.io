@@ -2,6 +2,7 @@
 author: "Jasmine Hirpara"
 excerpt: "Your own custom for loop structural directive in Angular"
 tags: [angular, structural directive, forEach]
+permalink: /posts/custom-structural-directive
 ---
 
 i have been working with Angular for quite some time now and i developed this curiosity to understand how the structural directives like `*ngFor`, `*ngIf` worked behind the scenes. So i referred to the Angular source code and tried to understand the implementation of `*ngFor` and tried my hand at creating my own custom structural directive similar to `*ngFor`. i named it `*forEach` (wow, so original 😅). Let's see how i implemented it.

@@ -1,7 +1,8 @@
 ---
 author: Jasmine Hirpara
 excerpt: RxJS combineLatest and forkJoin - what's the difference?
-tags: [RxJS, combineLatest, forkJoin]
+tags: [rxjs, combineLatest, forkJoin]
+permalink: /posts/combinelatest-vs-forkjoin
 ---
 
 Over the years, i have worked with RxJS and i used to wonder what is the difference between `combineLatest` and `forkJoin` functions. Both combine different observables into a single observable and emit the values when all the inner observables have emitted a value. One fine day i decided to use `forkJoin` to combine 2 observables - one a BehaviorSubject and another an observable returned from an http call. Lets see what happens when we use `forkJoin` to combine these 2 observables. For the sake of simplicity, i am using `of` operator to mock the http call.

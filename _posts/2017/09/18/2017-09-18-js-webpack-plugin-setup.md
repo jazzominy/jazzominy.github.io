@@ -2,6 +2,7 @@
 author: Jasmine Hirpara
 excerpt: In this self-help write-up, we will see some commonly used webpack loaders and plugins
 tags: [javascript, webpack, webpack-plugin]
+permalink: /posts/js-webpack-plugin-setup
 ---
 
 ## Setting up some common webpack loaders and plugins
