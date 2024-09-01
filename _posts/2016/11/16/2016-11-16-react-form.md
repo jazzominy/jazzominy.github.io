@@ -3,6 +3,7 @@ author: Jasmine Hirpara
 title: ReactJS Form Component
 excerpt: A reusable reactjs From component which renders the fields described in the configuration object in a form tag
 tags: [reactjs component]
+permalink: /posts/reactjs-form
 ---
 
 ## Form component built using ReactJS
