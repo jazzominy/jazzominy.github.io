@@ -1,9 +1,30 @@
 article.tags {
     padding: 0 2.5rem;
 
+    h1 {
+        margin-bottom: 2rem;
+    }
+
+    .tag-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .tag-box {
+        border: 0.0625rem solid var(--tag-border);
+        border-radius: .5rem;
+    }
+
     .tag {
         @include tag;
         font-size: 90%;
+        background-color: var(--link-hover-bg);
+        color: var(--link-hover-text);
+        position: relative;
+        top: -1rem;
+        left: 2rem;
+        margin-bottom: 0;
     }
 
     ul {
