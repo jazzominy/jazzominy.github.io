@@ -1,5 +1,5 @@
 ---
 layout: tag
-title: "Tag: RxJS"
-tag: RxJS
+title: "Tag: rxjs"
+tag: rxjs
 ---
