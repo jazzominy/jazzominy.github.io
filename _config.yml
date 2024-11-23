@@ -1,3 +1,5 @@
+author: "Jasmine Hirpara"
+url: "https://jazzominy.dev"
 permalink: /:year/:month/:day/:title/
 defaults:
   - scope:
