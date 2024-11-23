@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>{{ page.title }}</title>
+		<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+		<link rel="preload" as="style" href="/assets/css/style.css">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="{{ site.author }}">
@@ -11,7 +14,6 @@
 		<meta property="og:type" content="article">
 		<meta property="article:published_time" content="{{ page.date }}">
 		<link rel="canonical" href="{{ site.url }}{{ page.url }}">
-		<title>{{ page.title }}</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 		<style>
 			body {
