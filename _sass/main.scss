@@ -338,4 +338,13 @@ details > section:not(:first-child) {
 		height: unset;
 		overflow: unset;
 	}
+
+	#sidebar {
+		max-width: unset;
+		padding-top: 0;
+
+		& > nav {
+			width: unset;
+		}
+	}
 }
