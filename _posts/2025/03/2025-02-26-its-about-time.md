@@ -3,7 +3,7 @@ author: "Jasmine Hirpara"
 title: "CSS motion path - Part 2"
 excerpt: "Building a clock using CSS motion path and some Javascript"
 tags: [css, css motion path]
-permalink: /posts/caa-motion-path-part-2
+permalink: /posts/css-motion-path-part-2
 ---
 
 In my previous related [post](/posts/css-motion-path-part-1), i sent an emoji to a round trip using CSS motion path. In this post, i will build a clock using the motion path css properties and some Javascript.
