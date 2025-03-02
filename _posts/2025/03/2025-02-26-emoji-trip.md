@@ -133,4 +133,4 @@ And here is how it looks.
 
 Happy journey emoji!!
 
-Now that the i have a clear understanding of how the offset-* properties work, i build up on them to create a clock in [part 2](/posts/css-motion-path-part-1)
+Now that the i have a clear understanding of how the offset-* properties work, i build up on them to create a clock in [part 2](/posts/css-motion-path-part-2)
