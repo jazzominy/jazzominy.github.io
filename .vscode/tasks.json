@@ -6,7 +6,7 @@
         {
             "label": "Run jekyll",
             "type": "shell",
-            "command": "bundle exec jekyll serve --livereload --drafts",
+            "command": "source ~/.zshrc && bundle exec jekyll serve --livereload --drafts",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
