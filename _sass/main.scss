@@ -350,4 +350,8 @@ details > section:not(:first-child) {
 			width: unset;
 		}
 	}
+
+	article.tags div.tag-list {
+		grid-template-columns: 1fr;
+	}
 }
