@@ -209,6 +209,7 @@ Now that we have positioned the numbers on the circumference, we can position th
     background-color: black;
     offset-path: ray(0deg);
     offset-anchor: bottom;
+    display: inline-block;
 }
 
 .seconds {
@@ -237,6 +238,7 @@ Now that we have positioned the numbers on the circumference, we can position th
         background-color: black;
         offset-path: ray(0deg);
         offset-anchor: bottom;
+        display: inline-block;
     }
 
     .seconds {
