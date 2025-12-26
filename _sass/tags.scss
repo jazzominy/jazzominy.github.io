@@ -1,3 +1,5 @@
+@use "mixins";
+
 article.tags {
     padding: 0 2.5rem;
 
@@ -17,7 +19,7 @@ article.tags {
     }
 
     .tag {
-        @include tag;
+        @include mixins.tag;
         font-size: 90%;
         background-color: var(--link-hover-bg);
         color: var(--link-hover-text);
@@ -43,7 +45,7 @@ section.tag {
     }
 
     i {
-        @include tag;
+        @include mixins.tag;
         font-size: 70%;
         vertical-align: middle;
     }

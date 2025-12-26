@@ -23,6 +23,49 @@
 	--note-text-color: #bdbdbd;
 }
 
+@view-transition {
+	// opt-in to view transition for all pages
+	navigation: auto;
+}
+
+@keyframes slide-right {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes scale-out {
+	to {
+		transform: scale(0.8);
+	}
+}
+
+@keyframes scale-in {
+	from {
+		transform: scale(0.4);
+	}
+}
+
+::view-transition-old(main) {
+	animation: slide-right 1s, scale-out 1s, fade-out 1s;
+}
+
+::view-transition-new(main) {
+	animation: slide-left 1s, scale-in 1s, fade-in 1s;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -32,6 +75,12 @@ body {
 	height: 100vh;
 	font: 105%/1.5 var(--font-family);
 	letter-spacing: 0.0313rem;
+}
+
+main {
+	// To avoid flickering for view transition
+	background: inherit;
+	view-transition-name: main;
 }
 
 h1, h2, h3, h4, h5, h6 {
