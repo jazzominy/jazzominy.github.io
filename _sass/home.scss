@@ -1,3 +1,5 @@
+@use "mixins";
+
 section.home {
     padding-bottom: 2rem;
 
@@ -37,7 +39,7 @@ section.home {
     }
 
     .tag-list > a {
-        @include tag;
+        @include mixins.tag;
 
         &:hover {
             background-color: var(--link-hover-bg);
