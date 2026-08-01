@@ -7,9 +7,30 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch when site-relevant paths change
   push:
     branches: ["master"]
+    paths:
+      - "_posts/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - "_sass/**"
+      - "assets/**"
+      - "_data/**"
+      - "_plugins/**"
+      - "tags/**"
+      - "index.html"
+      - "about.html"
+      - "archive.html"
+      - "tags.html"
+      - "404.html"
+      - "_config.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "CNAME"
+      - "ng-toh/**"
+      - "ng-intercom/**"
+      - "github-profiles/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
