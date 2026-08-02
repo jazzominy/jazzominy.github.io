@@ -155,7 +155,7 @@ ul {
 			padding-left: 1rem;
 			padding-right: 1rem;
 
-			a {
+			a, span.active {
 				display: flex;
 				align-items: center;
 				gap: 1rem;
@@ -175,8 +175,8 @@ ul {
 				margin-left: 2rem;
 			}
 
-			a.active > i {
-				margin-left: 0;
+			span.active {
+				cursor: default;
 			}
 
 			.angle {

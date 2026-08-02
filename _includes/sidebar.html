@@ -28,13 +28,19 @@
 		<ul>
 			{% for item in site.data.navigation %}
 			<li>
-				<a href="{{ item.url }}"
-					class="{% if page.url == item.url %}active{% endif %}">
-					{% if page.url == item.url %}<span class="angle">&lt;</span>{% endif %}
-					<i class="fa-fw fas {{ item.icon }}"></i>
-					{{ item.name }}
-					{% if page.url == item.url %}<span class="angle">/&gt;</span>{% endif %}
+			{% if page.url == item.url %}
+				<span class="active" aria-current="page">
+				<span class="angle">&lt;</span>
+				<i class="fa-fw fas {{ item.icon }}"></i>
+				{{ item.name }}
+				<span class="angle">/&gt;</span>
+				</span>
+			{% else %}
+				<a href="{{ item.url }}">
+				<i class="fa-fw fas {{ item.icon }}"></i>
+				{{ item.name }}
 				</a>
+			{% endif %}
 			</li>
 			{% endfor %}
 		</ul>
