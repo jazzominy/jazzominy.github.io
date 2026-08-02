@@ -21,6 +21,9 @@
 	--note-border: #5f9ea0;
 	--note-bg: #5f9ea040;
 	--note-text-color: #bdbdbd;
+	--scrollbar-track: var(--bg);
+	--scrollbar-thumb: var(--tag-border);
+	--scrollbar-thumb-hover: var(--link-hover-bg);
 }
 
 @view-transition {
@@ -81,6 +84,8 @@ main {
 	// To avoid flickering for view transition
 	background: inherit;
 	view-transition-name: main;
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 h1, h2, h3, h4, h5, h6 {
