@@ -6,7 +6,7 @@ tags: [css, animation]
 permalink: /posts/view-transition-api
 ---
 
-Well well. Hello there. i know i am late to the party but view transitions api!! Thats some thing. i am hooked with it. Read up about it on <a href="https://drafts.csswg.org/css-view-transitions-2" target="_blank">CssWG</a> spec for view transitions. Credits where due - Jake Archibald's <a href="https://drafts.csswg.org/css-view-transitions-2" target="_blank">[article](https://developer.chrome.com/docs/web-platform/view-transitions/same-document)</a> helped me understand how view transitions api works.
+Well well. Hello there. i know i am late to the party but view transitions api!! Thats some thing. i am hooked with it. Read up about it on <a href="https://drafts.csswg.org/css-view-transitions-2" target="_blank">CssWG</a> spec for view transitions. Credits where due - Jake Archibald's <a href="https://developer.chrome.com/docs/web-platform/view-transitions/same-document" target="_blank">article</a> helped me understand how view transitions api works.
 
 <div class="note" style="display:none;">
   <div class="info"></div>
