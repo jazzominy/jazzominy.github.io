@@ -22,9 +22,32 @@ permalink: /resume/
       --accent-pastel: #a7c7e7;
       --accent-soft: #eaf3fb;
       --rule: #d3e3f2;
+      --bg: #fff;
+      --surface: #fff;
+      --headshot-mid: #d9e8f7;
+      --name-mid: #6f9fcf;
+      --name-end: var(--accent-pastel);
       --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
       --rail: 16rem;
       --gutter: 2rem;
+    }
+
+    /* Screen only, so printed copies and PDFs stay light */
+    @media screen and (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --ink: #e3e9f0;
+        --muted: #9aa8b8;
+        --accent: #8fbbe6;
+        --accent-pastel: #4a7299;
+        --accent-soft: #16222f;
+        --rule: #263646;
+        --bg: #0e141b;
+        --surface: #0e141b;
+        --headshot-mid: #1f3346;
+        --name-mid: #b9d6f2;
+        --name-end: #e4f0fb;
+      }
     }
 
     @font-face {
@@ -57,6 +80,7 @@ permalink: /resume/
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 0.3px;
       color: var(--ink);
+      background: var(--bg);
       font-size: 1rem;
       line-height: 1.45;
       max-width: 64rem;
@@ -145,7 +169,7 @@ permalink: /resume/
       aspect-ratio: 1;
       margin: 0 auto 1.1rem;
       border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
-      background: linear-gradient(140deg, var(--accent-pastel), #d9e8f7 70%, #fff);
+      background: linear-gradient(140deg, var(--accent-pastel), var(--headshot-mid) 70%, var(--surface));
       display: grid;
       place-content: center;
       text-align: center;
@@ -236,7 +260,7 @@ permalink: /resume/
       line-height: 1.05;
       margin: 2px 0 6px;
       letter-spacing: -.5px;
-      background: linear-gradient(90deg, var(--accent) 0%, #6f9fcf 55%, var(--accent-pastel) 100%);
+      background: linear-gradient(90deg, var(--accent) 0%, var(--name-mid) 55%, var(--name-end) 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -296,7 +320,7 @@ permalink: /resume/
       width: 0.625rem;
       height: 0.625rem;
       border-radius: 50%;
-      background: #fff;
+      background: var(--surface);
       border: 2px solid var(--accent-pastel);
     }
 
@@ -416,7 +440,7 @@ permalink: /resume/
       border-radius: 10px;
       padding: 1px 8px;
       font-size: 0.84rem;
-      background: #fff;
+      background: var(--surface);
     }
 
     .label {
