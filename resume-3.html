@@ -1,0 +1,1239 @@
+---
+layout: null
+permalink: /resume-3/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jasmine Hirpara — Lead Software Engineer (UI)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 11mm 12mm;
+    }
+
+    :root {
+      --paper: #f7f2e8;
+      --panel: #fffdf7;
+      --ink: #17202b;
+      --muted: #65707d;
+      --blue: #2f6fa3;
+      --cyan: #4da8c8;
+      --pink: #d85d83;
+      --yellow: #f1bd49;
+      --green: #4b9472;
+      --line: #b9c9d4;
+      --soft-blue: #deedf6;
+      --soft-pink: #f7dfe6;
+      --soft-yellow: #faedc9;
+      --shadow: #17202b;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    @media screen and (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #11171e;
+        --panel: #18212b;
+        --ink: #edf3f8;
+        --muted: #a9b5c1;
+        --blue: #78b7e6;
+        --cyan: #71c8df;
+        --pink: #f08bac;
+        --yellow: #f5cc6b;
+        --green: #7bc29d;
+        --line: #405466;
+        --soft-blue: #20384a;
+        --soft-pink: #452c3a;
+        --soft-yellow: #453b24;
+        --shadow: #06090d;
+      }
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12px 12px, color-mix(in srgb, var(--blue) 18%, transparent) 1.2px, transparent 1.3px) 0 0 / 24px 24px,
+        var(--paper);
+      color: var(--ink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      line-height: 1.45;
+      letter-spacing: .15px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a[target="_blank"]::after {
+      content: "↗";
+      content: "↗" / " (opens in a new tab)";
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1rem;
+      vertical-align: sub;
+      color: var(--pink);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 3px 0 0;
+      padding-left: 17px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    li::marker {
+      color: var(--pink);
+    }
+
+    code {
+      font-family: var(--mono);
+      font-size: .88em;
+    }
+
+    .workspace {
+      width: min(68rem, calc(100% - 32px));
+      margin: 28px auto;
+      background: var(--panel);
+      border: 2px solid var(--ink);
+      box-shadow: 9px 9px 0 var(--shadow);
+    }
+
+    /* Faux editor chrome */
+    .chrome {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      min-height: 2.5rem;
+      border-bottom: 2px solid var(--ink);
+      background: var(--soft-blue);
+      font-family: var(--mono);
+      font-size: .78rem;
+    }
+
+    .traffic {
+      display: flex;
+      gap: 7px;
+      padding: 0 14px;
+    }
+
+    .traffic i {
+      width: 11px;
+      height: 11px;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+    }
+
+    .traffic i:nth-child(1) {
+      background: var(--pink);
+    }
+
+    .traffic i:nth-child(2) {
+      background: var(--yellow);
+    }
+
+    .traffic i:nth-child(3) {
+      background: var(--green);
+    }
+
+    .tabs {
+      align-self: stretch;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      border-left: 1.5px solid var(--line);
+      border-right: 1.5px solid var(--line);
+      background: var(--panel);
+      white-space: nowrap;
+    }
+
+    .tab::before {
+      content: "●";
+      color: var(--blue);
+      margin-right: 7px;
+    }
+
+    .branch {
+      padding: 0 14px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* Hero resembles source code */
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2.5rem minmax(0, 1fr) 12rem;
+      border-bottom: 2px solid var(--ink);
+      overflow: hidden;
+    }
+
+    .line-nos {
+      padding: 1.55rem .6rem;
+      text-align: right;
+      border-right: 1.5px solid var(--line);
+      color: var(--line);
+      font: .76rem/1.85 var(--mono);
+      user-select: none;
+    }
+
+    .identity {
+      position: relative;
+      z-index: 1;
+      padding: 1.45rem 1.7rem 1.5rem;
+      min-width: 0;
+    }
+
+    .code-comment {
+      color: var(--green);
+      font: .82rem var(--mono);
+      margin-bottom: 6px;
+    }
+
+    .declaration {
+      color: var(--muted);
+      font: .9rem var(--mono);
+    }
+
+    .declaration .keyword {
+      color: var(--pink);
+      font-weight: 700;
+    }
+
+    .declaration .variable {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 5px 0 4px;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: .9;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--blue);
+      transform: translateX(2rem);
+    }
+
+    .headline {
+      margin-top: 12px;
+      max-width: 42rem;
+      font-size: 1.08rem;
+      font-weight: 650;
+    }
+
+    .headline em {
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .avatar-card {
+      position: relative;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+      border-left: 2px solid var(--ink);
+      background:
+        repeating-linear-gradient(-45deg, transparent 0 9px, color-mix(in srgb, var(--pink) 20%, transparent) 9px 11px),
+        var(--soft-yellow);
+    }
+
+    .avatar {
+      width: 8rem;
+      aspect-ratio: 1;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--panel);
+      box-shadow: 7px 7px 0 var(--pink);
+      display: grid;
+      place-content: center;
+      text-align: center;
+      transform: rotate(3deg);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .avatar-card::after {
+      content: "available for the next challenge";
+      position: absolute;
+      left: 50%;
+      bottom: .7rem;
+      transform: translateX(-50%) rotate(-2deg);
+      width: max-content;
+      max-width: 95%;
+      padding: 2px 7px;
+      /* kept same color to maintain contrast */
+      color: #17202b;
+      background: var(--yellow);
+      border: 1.5px solid var(--ink);
+      font: .65rem var(--mono);
+    }
+
+    /* Command palette contact links */
+    .command-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 14px;
+      overflow-x: auto;
+      border-bottom: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--panel);
+      scrollbar-width: thin;
+    }
+
+    .contact {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .contact li {
+      margin: 0;
+      padding: 2px 9px;
+      border: 1px solid color-mix(in srgb, var(--panel) 45%, transparent);
+      border-radius: 4px;
+      font: .72rem var(--mono);
+    }
+
+    .contact span {
+      margin-right: 4px;
+    }
+
+    .command-bar a[target="_blank"]::after {
+      color: var(--yellow);
+    }
+
+    /* Metrics resemble editor diagnostics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .metric {
+      position: relative;
+      padding: .85rem 1.1rem .8rem 3.1rem;
+      min-height: 5.2rem;
+      border-right: 1.5px solid var(--ink);
+    }
+
+    .metric:last-child {
+      border-right: 0;
+    }
+
+    .metric::before {
+      position: absolute;
+      left: 1rem;
+      top: .95rem;
+      font: 1.4rem var(--mono);
+    }
+
+    .metric:nth-child(1) {
+      background: var(--soft-pink);
+    }
+
+    .metric:nth-child(1)::before {
+      content: "✦";
+      color: var(--pink);
+    }
+
+    .metric:nth-child(2) {
+      background: var(--soft-blue);
+    }
+
+    .metric:nth-child(2)::before {
+      content: "◆";
+      color: var(--blue);
+    }
+
+    .metric:nth-child(3) {
+      background: var(--soft-yellow);
+    }
+
+    .metric:nth-child(3)::before {
+      content: "●";
+      color: var(--yellow);
+    }
+
+    .metric b {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 17rem;
+    }
+
+    main {
+      min-width: 0;
+      border-right: 2px solid var(--ink);
+    }
+
+    .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0;
+      padding: .55rem 1rem;
+      background: var(--soft-blue);
+      border-bottom: 1.5px solid var(--ink);
+      font: 700 .85rem var(--mono);
+      color: var(--blue);
+    }
+
+    .panel-title::before {
+      content: "⌄";
+      color: var(--pink);
+      position: relative;
+      top: -4px;
+    }
+
+    .panel-title::after {
+      content: "×";
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    .profile {
+      padding: .95rem 1.15rem 1rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .profile ul {
+      columns: 2;
+      column-gap: 2.2rem;
+      margin: 0;
+    }
+
+    .profile li {
+      break-inside: avoid;
+      margin-bottom: 7px;
+    }
+
+    /* Commit history */
+    .history {
+      padding: 1rem 1.15rem 1.2rem;
+    }
+
+    .commit {
+      position: relative;
+      display: grid;
+      grid-template-columns: 5.4rem minmax(0, 1fr);
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .commit:last-child {
+      padding-bottom: 0;
+    }
+
+    .commit:last-child::before {
+      display: none;
+    }
+
+    .commit-meta {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--muted);
+      padding-top: 1px;
+    }
+
+    .commit-meta b {
+      display: block;
+      color: var(--pink);
+      font-size: .78rem;
+    }
+
+    .commit-body {
+      position: relative;
+      padding: .7rem .85rem .75rem 1rem;
+      border: 1.5px solid var(--line);
+      border-radius: 3px;
+      background: var(--panel);
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .role {
+      font-weight: 750;
+      font-size: 1rem;
+    }
+
+    .dates {
+      flex: 0 0 auto;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background: var(--soft-blue);
+      color: var(--blue);
+      font: .72rem var(--mono);
+    }
+
+    .org {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-bottom: 4px;
+    }
+
+    .group {
+      margin: 7px 0 2px;
+      color: var(--blue);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      list-style: none;
+      margin: 4px 0 7px;
+      padding: 0;
+    }
+
+    .stack li {
+      margin: 0;
+      padding: 1px 6px;
+      border: 1px solid var(--blue);
+      background: var(--soft-blue);
+      color: var(--blue);
+      font: .7rem var(--mono);
+    }
+
+    .note {
+      margin: 0 0 1.1rem 6.4rem;
+      padding: .55rem .75rem;
+      border-left: 4px solid var(--yellow);
+      background: var(--soft-yellow);
+      font-size: .86rem;
+      color: var(--muted);
+    }
+
+    .note-label {
+      display: block;
+      color: var(--ink);
+      font: 700 .72rem var(--mono);
+    }
+
+    /* Inspector rail */
+    aside {
+      min-width: 0;
+    }
+
+    .inspector-section {
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .inspector-body {
+      padding: .8rem .9rem 1rem;
+    }
+
+    .json {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font: .76rem/1.55 var(--mono);
+    }
+
+    .json li {
+      margin: 0;
+    }
+
+    .json li::marker {
+      content: none;
+    }
+
+    .json .key {
+      color: var(--pink);
+    }
+
+    .json .value {
+      color: var(--blue);
+    }
+
+    .json .brace {
+      color: var(--muted);
+    }
+
+    .indent {
+      padding-left: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 4px 0 8px;
+    }
+
+    .tags span {
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      font-size: .76rem;
+    }
+
+    .label {
+      margin: 7px 0 2px;
+      color: var(--muted);
+      font: .72rem var(--mono);
+    }
+
+    .strengths {
+      margin: 0;
+      font-size: .86rem;
+    }
+
+    .edu {
+      margin-bottom: .75rem;
+    }
+
+    .edu:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu b {
+      display: block;
+      font-size: .88rem;
+    }
+
+    .edu span {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .writing {
+      font-size: .84rem;
+    }
+
+    .writing ul {
+      font-size: .8rem;
+    }
+
+    .statusbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 4px 10px;
+      color: var(--panel);
+      background: var(--blue);
+      font: .7rem var(--mono);
+    }
+
+    .statusbar span:last-child {
+      margin-left: auto;
+    }
+
+    .ai-generated-note {
+      margin: 0;
+      padding: 6px 10px 8px;
+      text-align: center;
+      font: 0.68rem var(--mono);
+      color: var(--panel);
+      background: var(--blue);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    @media screen and (max-width: 48rem) {
+      .workspace {
+        width: min(100% - 20px, 42rem);
+        margin: 10px auto;
+        box-shadow: 5px 5px 0 var(--shadow);
+      }
+
+      .chrome {
+        grid-template-columns: auto 1fr;
+      }
+
+      .branch {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 2rem 1fr;
+      }
+
+      .avatar-card {
+        grid-column: 1 / -1;
+        min-height: 12rem;
+        border: 0;
+        border-top: 2px solid var(--ink);
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        border-right: 0;
+        border-bottom: 1.5px solid var(--ink);
+      }
+
+      .metric:last-child {
+        border-bottom: 0;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        border-right: 0;
+      }
+
+      aside {
+        border-top: 2px solid var(--ink);
+      }
+
+      .profile ul {
+        columns: 1;
+      }
+
+      .commit {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .commit-meta {
+        text-align: left;
+      }
+
+      .commit::before {
+        left: 5px;
+        top: 2.8rem;
+      }
+
+      .commit-body {
+        margin-left: 1.2rem;
+      }
+
+      .commit-body::before {
+        left: -1.58rem;
+      }
+
+      .note {
+        margin-left: 1.2rem;
+      }
+    }
+
+    @media print {
+      html {
+        font-size: 9pt;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .workspace {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .chrome,
+      .statusbar {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 2rem 1fr 8.5rem;
+        border: 2px solid var(--ink);
+      }
+
+      .line-nos {
+        padding: .8rem .4rem;
+      }
+
+      .identity {
+        padding: .75rem 1rem .8rem;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+        letter-spacing: -1.5px;
+      }
+
+      .headline {
+        margin-top: 6px;
+        font-size: .95rem;
+      }
+
+      .avatar {
+        width: 6rem;
+      }
+
+      .avatar-card::after {
+        display: none;
+      }
+
+      .command-bar {
+        padding: 5px 9px;
+      }
+
+      .contact li {
+        font-size: .62rem;
+        padding: 1px 5px;
+      }
+
+      .metric {
+        min-height: 4rem;
+        padding: .55rem .7rem .5rem 2.3rem;
+      }
+
+      .metric::before {
+        left: .7rem;
+        top: .6rem;
+        font-size: 1rem;
+      }
+
+      .metric b {
+        font-size: 1.15rem;
+      }
+
+      .metric span {
+        font-size: .7rem;
+      }
+
+      .content {
+        display: block;
+      }
+
+      main {
+        float: left;
+        width: calc(100% - 15.5rem);
+        border: 0;
+        padding-right: .8rem;
+      }
+
+      aside {
+        float: right;
+        width: 15.5rem;
+        border-left: 2px solid var(--ink);
+      }
+
+      .content::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .panel-title {
+        padding: .35rem .65rem;
+      }
+
+      .profile {
+        padding: .55rem .75rem .65rem;
+      }
+
+      .profile ul {
+        columns: 1;
+      }
+
+      .profile li {
+        margin-bottom: 3px;
+      }
+
+      .history {
+        padding: .65rem .7rem .8rem;
+      }
+
+      .commit {
+        grid-template-columns: 4.4rem minmax(0, 1fr);
+        gap: .7rem;
+        padding-bottom: .65rem;
+      }
+
+      .commit::before {
+        left: 4.75rem;
+      }
+
+      .commit,
+      .commit-body {
+        break-inside: auto;
+      }
+
+      .commit-body {
+        padding: .45rem .55rem .5rem .75rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+
+      .commit-body::before {
+        left: -1.08rem;
+        width: 9px;
+        height: 9px;
+      }
+
+      .note {
+        margin: 0 0 .65rem 5.1rem;
+        padding: .4rem .55rem;
+      }
+
+      .inspector-body {
+        padding: .5rem .65rem .6rem;
+      }
+
+      .job-head,
+      .org,
+      .stack,
+      .group,
+      .panel-title {
+        break-after: avoid;
+      }
+
+      li,
+      .stack,
+      .note,
+      .edu,
+      .inspector-section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="workspace">
+    <div class="chrome" aria-hidden="true">
+      <span class="traffic"><i></i><i></i><i></i></span>
+      <span class="tabs"><span class="tab">jasmine.resume</span></span>
+      <span class="branch">⑂ post/resume</span>
+    </div>
+
+    <header class="hero">
+      <div class="line-nos" aria-hidden="true">01<br>02<br>03<br>04<br>05<br>06</div>
+      <div class="identity">
+        <div class="code-comment">// engineer · architect · UI enthusiast</div>
+        <div class="declaration"><span class="keyword">const</span> <span class="variable">developer</span> = {</div>
+        <h1>Jasmine <span>Hirpara</span></h1>
+        <div class="headline">Lead Software Engineer (UI) <em>· Front-end · All things UI</em></div>
+        <div class="declaration">};</div>
+      </div>
+      <div class="avatar-card">
+        <div class="avatar">
+          <img alt="Jasmine Hirpara" src="/assets/img/jh.jpg">
+        </div>
+      </div>
+    </header>
+
+    <div class="command-bar">
+      <ul class="contact">
+        <li><span>location:</span>Bangalore, India</li>
+        <li><span>email:</span><a href="mailto:jasmine758@gmail.com">jasmine758@gmail.com</a></li>
+        <li><span>email:</span><a href="mailto:jasmine758@rediffmail.com">jasmine758@rediffmail.com</a></li>
+        <li><span>in:</span><a href="https://www.linkedin.com/in/jazzominy" target="_blank" rel="noopener">jazzominy</a>
+        </li>
+        <li><span>gh:</span><a href="https://github.com/jazzominy" target="_blank" rel="noopener">jazzominy</a></li>
+        <li><span>web:</span><a href="https://jazzominy.dev" target="_blank" rel="noopener">jazzominy.dev</a></li>
+      </ul>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><b>18+ years</b><span>building rich web interfaces since 2008</span></div>
+      <div class="metric"><b>10+ apps</b><span>one Angular/Nx monorepo, shared architecture</span></div>
+      <div class="metric"><b>2 eras</b><span>HTML/CSS/JS today · Flash/Flex before</span></div>
+    </div>
+
+    <div class="content">
+      <main>
+        <h2 class="panel-title">README.md — profile</h2>
+        <section class="profile">
+          <ul>
+            <li>Lead UI engineer working with <b>10+ teams</b> to build a growing set of products into one consistent,
+              maintainable front-end platform.</li>
+            <li><b>7 years</b> overseeing the Angular architecture behind a suite of <b>10+ applications</b>.</li>
+            <li>Align product teams on <b>shared libraries</b>, a common <b>design system</b> and a steady <b>upgrade
+                path</b>.</li>
+            <li><b>18 years</b> of hands-on UI engineering, from enterprise Adobe Flex applications to modern
+              TypeScript, HTML and CSS.</li>
+            <li>Write about what I learn along the way at my <a href="https://jazzominy.dev" target="_blank"
+                rel="noopener">blog</a>.</li>
+          </ul>
+        </section>
+
+        <h2 class="panel-title">SOURCE CONTROL — experience</h2>
+        <section class="history">
+          <article class="commit">
+            <div class="commit-meta"><b>HEAD → now</b></div>
+            <div class="commit-body">
+              <div class="job-head">
+                <span class="role">Lead Software Engineer (UI)</span>
+                <span class="dates">Nov 2018 – now</span>
+              </div>
+              <div class="org">Saksoft, Bangalore · Client: ACA Global</div>
+              <ul class="stack" aria-label="Tech stack">
+                <li>Angular</li>
+                <li>TypeScript</li>
+                <li>Nx</li>
+                <li>NgRx</li>
+                <li>RxJS</li>
+                <li>Angular Material</li>
+                <li>DevExtreme</li>
+                <li>Sass</li>
+                <li>lodash</li>
+              </ul>
+              <div class="group">Architecture &amp; platform</div>
+              <ul>
+                <li>Own the front-end architecture of an <b>Nx monorepo hosting 10+ Angular applications</b>, and define
+                  the standards every team follows for code reuse and maintainability.</li>
+                <li>Built shared Nx library projects for cross-app components, with custom TypeScript package namespaces
+                  and shared styles wired through <code>angular.json</code>, so teams use one set of components instead
+                  of rebuilding their own.</li>
+                <li>Implemented application state management with NgRx, and used RxJS to coordinate and synchronize
+                  complex sequences of API calls.</li>
+                <li>Plan and deliver Angular and dependency upgrades ahead of LTS deadlines, and steadily pay down tech
+                  debt by replacing obsolete technology.</li>
+              </ul>
+              <div class="group">Product &amp; design leadership</div>
+              <ul>
+                <li>Work with the company partner and stakeholders on the <b>roadmap for 10+ products</b>, and
+                  contribute to feature and architecture decisions.</li>
+                <li>Work with the design team on the product design system, and coordinate rollout of the spec across
+                  product teams.</li>
+                <li>Review critical pull requests and mentor junior developers.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="commit">
+            <div class="commit-meta"><b>2017</b>commit ng4</div>
+            <div class="commit-body">
+              <div class="job-head">
+                <span class="role">Sr. Analyst / Software Development Engineer (UI)</span>
+                <span class="dates">2017 – 2018</span>
+              </div>
+              <div class="org">Time Inc India (now Meredith Corporation)</div>
+              <ul class="stack" aria-label="Tech stack">
+                <li>Angular 4</li>
+                <li>TypeScript</li>
+                <li>RxJS</li>
+                <li>Kendo UI</li>
+                <li>jQuery</li>
+              </ul>
+              <ul>
+                <li><b>Built an internal user-permissioning application from scratch</b> in Angular v4, replacing a
+                  legacy Silverlight system.</li>
+                <li>Designed the app's state service and a publish/subscribe messaging layer for communication between
+                  components.</li>
+                <li>Built an RxJS-powered user-search autocomplete that removed redundant API calls.</li>
+                <li>Implemented on-demand app bootstrapping gated by user authorization, and used source-map-explorer to
+                  audit and trim production bundles.</li>
+                <li>Integrated the Kendo UI (jQuery) data grid into Angular to meet a product requirement.</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="note" role="note">
+            <span class="note-label">⚠ migration note</span>
+            Prior to 2017, I was an Adobe Flex Consultant, building rich internet applications in Adobe Flex and
+            ActionScript. The said technology is now deprecated and I have not used it since.
+          </div>
+
+          <article class="commit">
+            <div class="commit-meta"><b>2008</b>commit flex</div>
+            <div class="commit-body">
+              <div class="job-head">
+                <span class="role">Adobe Flex Consultant</span>
+                <span class="dates">Feb 2008 – May 2016</span>
+              </div>
+              <div class="org">Tekno Point Multimedia, Mumbai · placed with enterprise clients</div>
+              <ul class="stack" aria-label="Tech stack">
+                <li>Adobe / Apache Flex</li>
+                <li>ActionScript 3</li>
+                <li>Flash</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <ul>
+                <li><b>ServiceMax, Bangalore</b> (Nov 2009 – May 2016): Built and maintained 3 Flex applications for
+                  field service management. When Google deprecated its Flash Maps API, I migrated the Dispatch Console's
+                  technician routing to the JavaScript Maps API, delivering a <b>hybrid Flash + JavaScript app</b>.</li>
+                <li><b>HCL Axon, Noida</b> (Jan – Jun 2011) and <b>Vertex Software, now NTT Data, Pune</b> (May – Oct
+                  2009): Built rich internet applications in Adobe Flex and ActionScript.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="commit">
+            <div class="commit-meta"><b>root</b>commit java</div>
+            <div class="commit-body">
+              <div class="job-head">
+                <span class="role">Member of Technical Staff</span>
+                <span class="dates">2006 – Aug 2007</span>
+              </div>
+              <div class="org">Websym Technologies, Pune</div>
+              <ul class="stack" aria-label="Tech stack">
+                <li>Java</li>
+                <li>Struts</li>
+                <li>JSP</li>
+                <li>MS SQL Server</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <ul>
+                <li>Built features for a full-stack recruitment portal using Java Struts, JSP and MS SQL Server.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside>
+        <section class="inspector-section">
+          <h2 class="panel-title">package.json</h2>
+          <div class="inspector-body">
+            <ul class="json" aria-label="Expertise">
+              <li class="brace">{</li>
+              <li class="indent"><span class="key">"role"</span>: <span class="value">"UI engineer"</span>,</li>
+              <li class="indent"><span class="key">"experience"</span>: <span class="value">"18+ years"</span>,</li>
+              <li class="indent"><span class="key">"dependencies"</span>: {</li>
+            </ul>
+            <div class="label">Core</div>
+            <div class="tags">
+              <span>Angular</span><span>TypeScript</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Sass</span>
+            </div>
+            <div class="label">State &amp; data</div>
+            <div class="tags"><span>NgRx</span><span>RxJS</span></div>
+            <div class="label">Tooling</div>
+            <div class="tags"><span>Nx monorepo</span><span>Node.js</span><span>source-map-explorer</span></div>
+            <div class="label">UI libraries</div>
+            <div class="tags"><span>Angular Material</span><span>DevExtreme</span><span>Kendo UI</span></div>
+            <div class="label">Earlier</div>
+            <div class="tags"><span>Adobe Flex</span><span>ActionScript</span><span>Java / Struts</span></div>
+            <ul class="json">
+              <li class="indent">}</li>
+              <li class="brace">}</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="inspector-section">
+          <h2 class="panel-title">OUTLINE — strengths</h2>
+          <div class="inspector-body">
+            <ul class="strengths">
+              <li>All things UI</li>
+              <li>Working with design team to build Design systems</li>
+              <li>Framework upgrades &amp; tech-debt reduction</li>
+              <li>Cross-team alignment &amp; collaboration</li>
+              <li>Code review &amp; helping peers</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="inspector-section">
+          <h2 class="panel-title">education.yml</h2>
+          <div class="inspector-body">
+            <div class="edu">
+              <b>B.E., Electronics &amp; Telecommunications</b>
+              <span>Sinhgad College of Engineering, Pune · 2005</span>
+            </div>
+            <div class="edu">
+              <b>Diploma in Advanced Computer Arts</b>
+              <span>C-DAC, Mumbai · 2008</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="inspector-section">
+          <h2 class="panel-title">writing.md</h2>
+          <div class="inspector-body writing">
+            <p>In my free time I tinker and publish my learnings at <a href="https://jazzominy.dev" target="_blank"
+                rel="noopener"><b>jazzominy.dev</b></a>:</p>
+            <ul>
+              <li>View Transitions API: grid-to-list layouts</li>
+              <li>clip-path &amp; CSS mask animation</li>
+              <li>Building a clock with CSS motion path</li>
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="statusbar" aria-hidden="true">
+      <span>⑂ post/resume*</span>
+      <span>UTF-8</span>
+      <span>HTML · CSS</span>
+      <span>✓ ready</span>
+    </footer>
+    <p class="ai-generated-note">This resume is AI generated</p>
+  </div>
+</body>
+
+</html>

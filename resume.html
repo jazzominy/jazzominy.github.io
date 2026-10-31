@@ -1,0 +1,784 @@
+---
+layout: null
+permalink: /resume/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jasmine Hirpara – Lead Software Engineer (UI)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 13mm;
+    }
+
+    :root {
+      --ink: #1c2430;
+      --muted: #5b6675;
+      --accent: #3d6f9e;
+      --accent-pastel: #a7c7e7;
+      --accent-soft: #eaf3fb;
+      --rule: #d3e3f2;
+      --bg: #fff;
+      --surface: #fff;
+      --headshot-mid: #d9e8f7;
+      --name-mid: #6f9fcf;
+      --name-end: var(--accent-pastel);
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --rail: 16rem;
+      --gutter: 2rem;
+    }
+
+    /* Screen only, so printed copies and PDFs stay light */
+    @media screen and (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --ink: #e3e9f0;
+        --muted: #9aa8b8;
+        --accent: #8fbbe6;
+        --accent-pastel: #4a7299;
+        --accent-soft: #16222f;
+        --rule: #263646;
+        --bg: #0e141b;
+        --surface: #0e141b;
+        --headshot-mid: #1f3346;
+        --name-mid: #b9d6f2;
+        --name-end: #e4f0fb;
+      }
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+      font-stretch: normal;
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("/assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 1rem;
+      line-height: 1.45;
+      max-width: 64rem;
+      margin: 32px auto;
+      padding: 0 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a[target="_blank"]::after {
+      content: "↗";
+      content: "↗" / " (opens in a new tab)";
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1rem;
+      vertical-align: sub;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0;
+    }
+
+    code {
+      font-family: var(--mono);
+      font-size: 0.86rem;
+    }
+
+    ul {
+      margin: 2px 0 0;
+      padding-left: 16px;
+    }
+
+    li {
+      margin-bottom: 2.5px;
+    }
+
+    li::marker {
+      color: var(--accent-pastel);
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: var(--rail) 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "id main" "rail main";
+      column-gap: var(--gutter);
+    }
+
+    .id {
+      grid-area: id;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    .rail {
+      grid-area: rail;
+    }
+
+    /* Left rail: identity card on top, details below */
+    .id,
+    .rail {
+      background: var(--accent-soft);
+      padding: 0 1.1rem;
+    }
+
+    .id {
+      border-radius: 14px 14px 0 0;
+      padding-top: 1.4rem;
+      text-align: center;
+    }
+
+    .rail {
+      border-radius: 0 0 14px 14px;
+      padding-bottom: 1.2rem;
+    }
+
+    .headshot {
+      position: relative;
+      width: 9rem;
+      aspect-ratio: 1;
+      margin: 0 auto 1.1rem;
+      border-radius: 58% 42% 55% 45% / 48% 58% 42% 52%;
+      background: linear-gradient(140deg, var(--accent-pastel), var(--headshot-mid) 70%, var(--surface));
+      display: grid;
+      place-content: center;
+      text-align: center;
+      color: var(--accent);
+      overflow: visible;
+    }
+
+    .headshot::before {
+      content: "";
+      position: absolute;
+      inset: -7px;
+      border: 1.5px dashed var(--accent-pastel);
+      border-radius: 45% 55% 42% 58% / 55% 45% 58% 42%;
+    }
+
+    .headshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
+
+    .contact {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.4rem;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .contact li {
+      margin-bottom: 6px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact span {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-transform: lowercase;
+    }
+
+    /* Section headings as self-closing tags, like the site's < Home /> nav */
+    h2 {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 9px;
+      letter-spacing: .2px;
+    }
+
+    h2::before {
+      content: "<";
+      color: var(--accent-pastel);
+      margin-right: 1px;
+    }
+
+    h2::after {
+      content: " />";
+      color: var(--accent-pastel);
+    }
+
+    section+section {
+      margin-top: 1.1rem;
+    }
+
+    .rail section:first-child {
+      padding-top: 1rem;
+      border-top: 1.5px solid var(--rule);
+    }
+
+    /* Main column */
+    header {
+      margin-bottom: 1rem;
+    }
+
+    .hello {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: 2.9rem;
+      line-height: 1.05;
+      margin: 2px 0 6px;
+      letter-spacing: -.5px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--name-mid) 55%, var(--name-end) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .headline {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .headline em {
+      font-style: normal;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 1.2rem;
+    }
+
+    .stat {
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-pastel);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--accent);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .stat span {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    /* Experience as a timeline */
+    .job {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    .job::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.3rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--accent-pastel);
+    }
+
+    .job:first-of-type::after {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: 0.4063rem;
+      top: 1.2rem;
+      bottom: -1.375rem;
+      border-left: 2px solid var(--rule);
+    }
+
+    .job:last-of-type::before {
+      display: none;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .role {
+      font-weight: 700;
+      font-size: 1.06rem;
+    }
+
+    .dates {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 4px;
+      padding: 1px 6px;
+      white-space: nowrap;
+    }
+
+    .org {
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .group {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin: 6px 0 1px;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      list-style: none;
+      margin: 2px 0 6px;
+      padding: 0;
+    }
+
+    .stack li {
+      margin: 0;
+      padding: 1px 7px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-pastel);
+      border-bottom: 2px solid var(--accent-pastel);
+      border-radius: 4px;
+    }
+
+    .note {
+      position: relative;
+      margin: 0 0 14px 1.4rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent-pastel);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note::before {
+      content: "";
+      position: absolute;
+      left: calc(0.4063rem - 1.4rem - 3px);
+      top: 0;
+      bottom: -14px;
+      border-left: 2px dashed var(--rule);
+    }
+
+    .ai-generated-note {
+      grid-column: 1 / -1;
+      margin-top: 1.25rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .note-label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+
+    /* Rail content */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .tags span {
+      border: 1px solid var(--accent-pastel);
+      border-radius: 10px;
+      padding: 1px 8px;
+      font-size: 0.84rem;
+      background: var(--surface);
+    }
+
+    .label {
+      font-weight: 600;
+      font-size: 0.86rem;
+      margin: 6px 0 3px;
+      color: var(--muted);
+    }
+
+    .edu {
+      margin-bottom: 8px;
+    }
+
+    .edu b {
+      display: block;
+      font-size: 0.93rem;
+    }
+
+    .edu span {
+      font-size: 0.86rem;
+    }
+
+    .rail ul {
+      padding-left: 14px;
+      font-size: 0.9rem;
+    }
+
+    .rail p {
+      font-size: 0.9rem;
+    }
+
+    @media screen and (max-width: 48rem) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas: "id" "main" "rail";
+      }
+
+      .id {
+        border-radius: 14px;
+        padding-bottom: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .rail {
+        border-radius: 14px;
+        margin-top: 1.2rem;
+        padding-top: 0.2rem;
+      }
+
+      .rail section:first-child {
+        border-top: 0;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media print {
+      html {
+        font-size: 10pt;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+
+      /* Firefox can't fragment a grid across pages, so print the columns as floats */
+      .page {
+        display: block;
+      }
+
+      .page::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .id,
+      .rail {
+        float: left;
+        clear: left;
+        width: var(--rail);
+      }
+
+      main {
+        float: right;
+        width: calc(100% - var(--rail) - var(--gutter));
+      }
+
+      .rail {
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+
+      /* Chromium prints background-clip: text as a solid block */
+      h1 {
+        background: none;
+        color: var(--accent);
+      }
+
+      h2,
+      .job-head,
+      .org,
+      .stack,
+      .group {
+        break-after: avoid;
+      }
+
+      li,
+      .edu,
+      .stack,
+      .note,
+      .id,
+      .rail section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="id">
+      <div class="headshot" role="img" aria-label="Headshot placeholder">
+        <img class="pic" alt="Jasmine Hirpara" src="/assets/img/jh.jpg">
+      </div>
+      <ul class="contact">
+        <li><span>location</span>Bangalore, India</li>
+        <li><span>email</span>
+          <a href="mailto:jasmine758@gmail.com">jasmine758@gmail.com</a><br>
+          <a href="mailto:jasmine758@rediffmail.com">jasmine758@rediffmail.com</a>
+        </li>
+        <li><span>linkedin</span><a href="https://www.linkedin.com/in/jazzominy" target="_blank" rel="noopener">linkedin.com/in/jazzominy</a></li>
+        <li><span>github</span><a href="https://github.com/jazzominy" target="_blank" rel="noopener">github.com/jazzominy</a></li>
+        <li><span>blog</span><a href="https://jazzominy.dev" target="_blank" rel="noopener">jazzominy.dev</a></li>
+      </ul>
+    </div>
+
+    <main>
+
+      <header>
+        <div class="hello">// hi, i am</div>
+        <h1>Jasmine Hirpara</h1>
+        <div class="headline">Lead Software Engineer (UI) <em>· Front-end · All things UI</em>
+        </div>
+      </header>
+
+      <div class="highlights">
+        <div class="stat"><b>18+ yrs</b><span>building rich web UIs, since 2008</span></div>
+        <div class="stat"><b>10+ apps</b><span>Angular apps in one Nx monorepo, front-end roadmap &amp; architecture input</span></div>
+        <div class="stat"><b>2 eras</b><span>Now HTML, CSS &amp; JS, earlier Flash/Flex ActionScript</span></div>
+      </div>
+
+      <section>
+        <h2>profile</h2>
+        <ul>
+          <li>Lead UI engineer working with <b>10+ teams</b> to build a growing set of products into one consistent,
+            maintainable front-end platform.</li>
+          <li><b>7 years</b> overseeing the Angular architecture behind a suite of <b>10+ applications</b>.</li>
+          <li>Align product teams on <b>shared libraries</b>, a common <b>design system</b> and a steady
+            <b>upgrade path</b>.</li>
+          <li><b>18 years</b> of hands-on UI engineering, from enterprise Adobe Flex applications to modern TypeScript,
+            HTML and CSS.</li>
+          <li>Write about what I learn along the way at my <a href="https://jazzominy.dev" target="_blank" rel="noopener">blog</a>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Lead Software Engineer (UI)</span>
+            <span class="dates">Nov 2018 – now</span>
+          </div>
+          <div class="org">Saksoft, Bangalore &nbsp;·&nbsp; Client: ACA Global</div>
+          <ul class="stack" aria-label="Tech stack">
+            <li>Angular</li><li>TypeScript</li><li>Nx</li><li>NgRx</li><li>RxJS</li>
+            <li>Angular Material</li><li>DevExtreme</li><li>Sass</li><li>lodash</li>
+          </ul>
+
+          <div class="group">Architecture &amp; platform</div>
+          <ul>
+            <li>Own the front-end architecture of an <b>Nx monorepo hosting 10+ Angular applications</b>, and define the
+              standards every team follows for code reuse and maintainability.</li>
+            <li>Built shared Nx library projects for cross-app components, with custom TypeScript package namespaces and
+              shared styles wired through <code>angular.json</code>, so teams use one set of components instead of
+              rebuilding their own.</li>
+            <li>Implemented application state management with NgRx, and used RxJS to coordinate and synchronize complex
+              sequences of API calls.</li>
+            <li>Plan and deliver Angular and dependency upgrades ahead of LTS deadlines, and steadily pay down tech debt
+              by replacing obsolete technology.</li>
+          </ul>
+
+          <div class="group">Product &amp; design leadership</div>
+          <ul>
+            <li>Work with the company partner and stakeholders on the <b>roadmap for 10+ products</b>, and contribute to
+              feature and architecture decisions.</li>
+            <li>Work with the design team on the product design system, and coordinate rollout of the spec across
+              product teams.</li>
+            <li>Review critical pull requests and mentor junior developers.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Sr. Analyst / Software Development Engineer (UI)</span>
+            <span class="dates">2017 – 2018</span>
+          </div>
+          <div class="org">Time Inc India (now Meredith Corporation)</div>
+          <ul class="stack" aria-label="Tech stack">
+            <li>Angular 4</li><li>TypeScript</li><li>RxJS</li><li>Kendo UI</li><li>jQuery</li>
+          </ul>
+          <ul>
+            <li><b>Built an internal user-permissioning application from scratch</b> in Angular v4, replacing a legacy
+              Silverlight system.</li>
+            <li>Designed the app's state service and a publish/subscribe messaging layer for communication between
+              components.</li>
+            <li>Built an RxJS-powered user-search autocomplete that removed redundant API calls.</li>
+            <li>Implemented on-demand app bootstrapping gated by user authorization, and used source-map-explorer to
+              audit and trim production bundles.</li>
+            <li>Integrated the Kendo UI (jQuery) data grid into Angular to meet a product requirement.</li>
+          </ul>
+        </div>
+
+        <div class="note" role="note">
+          <span class="note-label">// note</span>
+          <p>
+            Prior to 2017, I was an Adobe Flex Consultant, building rich internet applications in Adobe Flex and ActionScript. The said technology is now deprecated and I have not used it since.
+          </p>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Adobe Flex Consultant</span>
+            <span class="dates">Feb 2008 – May 2016</span>
+          </div>
+          <div class="org">Tekno Point Multimedia, Mumbai &nbsp;·&nbsp; placed with enterprise clients</div>
+          <ul class="stack" aria-label="Tech stack">
+            <li>Adobe / Apache Flex</li><li>ActionScript 3</li><li>Flash</li><li>HTML</li><li>CSS</li>
+          </ul>
+          <ul>
+            <li><b>ServiceMax, Bangalore</b> (Nov 2009 – May 2016): Built and maintained 3 Flex applications for field
+              service management. When Google deprecated its Flash Maps API, I migrated the Dispatch Console's
+              technician routing to the JavaScript Maps API, delivering a <b>hybrid Flash + JavaScript app</b>.</li>
+            <li><b>HCL Axon, Noida</b> (Jan – Jun 2011) and <b>Vertex Software, now NTT Data, Pune</b> (May – Oct 2009):
+              Built rich internet applications in Adobe Flex and ActionScript.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <span class="role">Member of Technical Staff</span>
+            <span class="dates">2006 – Aug 2007</span>
+          </div>
+          <div class="org">Websym Technologies, Pune</div>
+          <ul class="stack" aria-label="Tech stack">
+            <li>Java</li><li>Struts</li><li>JSP</li><li>MS SQL Server</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+          <ul>
+            <li>Built features for a full-stack recruitment portal using Java Struts, JSP and MS SQL Server.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="rail">
+
+      <section>
+        <h2>expertise</h2>
+        <div class="label">Core</div>
+        <div class="tags">
+          <span>Angular</span><span>TypeScript</span><span>JavaScript</span>
+          <span>HTML5</span><span>CSS3</span><span>Sass</span>
+        </div>
+        <div class="label">State &amp; data</div>
+        <div class="tags"><span>NgRx</span><span>RxJS</span></div>
+        <div class="label">Tooling</div>
+        <div class="tags"><span>Nx monorepo</span><span>Node.js</span><span>source-map-explorer</span></div>
+        <div class="label">UI libraries</div>
+        <div class="tags"><span>Angular Material</span><span>DevExtreme</span><span>Kendo UI</span></div>
+        <div class="label">Earlier</div>
+        <div class="tags"><span>Adobe Flex</span><span>ActionScript</span><span>Java / Struts</span></div>
+      </section>
+
+      <section>
+        <h2>strengths</h2>
+        <ul>
+          <li>All things UI</li>
+          <li>Working with design team to build Design systems</li>
+          <li>Framework upgrades &amp; tech-debt reduction</li>
+          <li>Cross-team alignment &amp; collaboration</li>
+          <li>Code review &amp; helping peers</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>education</h2>
+        <div class="edu">
+          <b>B.E., Electronics &amp; Telecommunications</b>
+          <span>Sinhgad College of Engineering, Pune · 2005</span>
+        </div>
+        <div class="edu">
+          <b>Diploma in Advanced Computer Arts</b>
+          <span>C-DAC, Mumbai · 2008</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>writing</h2>
+        <p>In my free time i tinker and publish my learnings at <a href="https://jazzominy.dev" target="_blank" rel="noopener"><b>jazzominy.dev</b></a>:</p>
+        <ul>
+          <li>View Transitions API: grid-to-list layouts</li>
+          <li>clip-path &amp; CSS mask animation</li>
+          <li>Building a clock with CSS motion path</li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <p class="ai-generated-note">This resume is AI generated</p>
+
+  </div>
+
+</body>
+
+</html>
